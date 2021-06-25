@@ -378,7 +378,8 @@
       lsp-enable-indentation nil ;; uncomment to use cider indentation instead of lsp
       ;; lsp-enable-completion-at-point nil ;; uncomment to use cider completion instead of lsp
 
-      lsp-completion-provider :capf)
+      lsp-completion-provider :capf
+      lsp-enable-on-type-formatting nil)
 ;; or just disable lsp-diagnostics-mode for a single buffer
 
 ;; (setq lsp-ui-peek-list-width 60
@@ -421,4 +422,4 @@
 
 ;; end clojure-lsp
 
-(setq clojure-align-separator 'entire)
+;; (setq clojure-align-separator 'entire)

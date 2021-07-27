@@ -33,7 +33,6 @@
                             ido-vertical-mode
                             purescript-mode
                             reveal-in-osx-finder
-                            sql-indent
                             exec-path-from-shell ;; fix path in Emacs by reading from .zshenv
                             flycheck-clj-kondo
                             flycheck-rust

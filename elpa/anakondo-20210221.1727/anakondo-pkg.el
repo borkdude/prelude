@@ -1,2 +1,2 @@
-;;; Generated package description from /Users/borkdude/.emacs.d/elpa/anakondo-20210221.1727/anakondo.el  -*- no-byte-compile: t -*-
+;;; Generated package description from anakondo.el  -*- no-byte-compile: t -*-
 (define-package "anakondo" "20210221.1727" "Adds clj-kondo based Clojure[Script] editing facilities" '((emacs "26.3")) :commit "c48518560815c49d8d78fb9069906d17e883385e" :authors '(("Didier A." . "didibus@users.noreply.github.com")) :maintainer '("Didier A." . "didibus@users.noreply.github.com") :keywords '("clojure" "clojurescript" "cljc" "clj-kondo" "completion" "languages" "tools") :url "https://github.com/didibus/anakondo")

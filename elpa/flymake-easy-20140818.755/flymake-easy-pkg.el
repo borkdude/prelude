@@ -1,2 +1,2 @@
-;;; Generated package description from /Users/borkdude/.emacs.d/elpa/flymake-easy-20140818.755/flymake-easy.el  -*- no-byte-compile: t -*-
+;;; Generated package description from flymake-easy.el  -*- no-byte-compile: t -*-
 (define-package "flymake-easy" "20140818.755" "Helpers for easily building flymake checkers" 'nil :commit "de41ea49503f71f997e5c359a2ad08df696c0147" :authors '(("Steve Purcell" . "steve@sanityinc.com")) :maintainer '("Steve Purcell" . "steve@sanityinc.com") :keywords '("convenience" "internal") :url "https://github.com/purcell/flymake-easy")

@@ -422,3 +422,4 @@
 ;; end clojure-lsp
 
 ;; (setq clojure-align-separator 'entire)
+(add-to-list 'interpreter-mode-alist '("bb" . clojure-mode))

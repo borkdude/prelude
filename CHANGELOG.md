@@ -4,11 +4,21 @@
 
 ### New features
 
+* Add a Racket module.
+* Add a Lua module.
+* Auto-install `racket-mode` if needed.
+* Add a F# module.
+
 ### Changes
 
 * Bind all essential `avy` commands to their recommended keybindings.
+* Remove `company-lsp`.
+* Replace `yank-pop` key-binding to `counse-yank-pop` for `ivy-mode`.
+* The keybinding for `proced` is now enabled unconditionally.
 
 ### Bugs fixed
+
+* Fix `company` still being visible in the mode line.
 
 ## 1.1.0 (2021-02-14)
 

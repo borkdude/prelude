@@ -35,3 +35,6 @@ transient/
 
 ## customized by me
 elpa/vterm-**/build*
+eclipse.jdt.ls
+workspace
+.dap-breakpoints

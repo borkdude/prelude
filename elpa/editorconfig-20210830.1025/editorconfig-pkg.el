@@ -2,7 +2,7 @@
   '((cl-lib "0.5")
     (nadvice "0.3")
     (emacs "24"))
-  :commit "2ab86dc9a8ed7a669ca348252d4af46522b5c411" :authors
+  :commit "3c03cef3110024016c688553733cdc3694a8a799" :authors
   '(("EditorConfig Team" . "editorconfig@googlegroups.com"))
   :maintainer
   '("EditorConfig Team" . "editorconfig@googlegroups.com")

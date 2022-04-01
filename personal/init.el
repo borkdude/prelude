@@ -28,7 +28,7 @@
 
                             ;; install joker first
                             ;; https://github.com/candid82/joker#installation
-                            flycheck-joker
+                            ;; flycheck-joker
                             adoc-mode
                             ido-vertical-mode
                             purescript-mode
@@ -47,7 +47,7 @@
                             markdown-toc
                             ))
 
-(require 'flycheck-joker)
+;; (require 'flycheck-joker)
 (require 'flycheck-clj-kondo)
 (require 'flycheck-rust)
 ;; (require 'anakondo)
@@ -263,7 +263,7 @@
   (setenv "SHELL" "/bin/zsh")
   (exec-path-from-shell-initialize)
   (exec-path-from-shell-copy-envs
-   '("PATH")))
+   '("PATH" "JAVA_HOME")))
 
 (custom-set-variables
  '(show-trailing-whitespace t))
@@ -272,8 +272,8 @@
 
 ;;;; Setting up flycheck clj-kondo -> joker chain
 ;; ensure that clj-kondo checkers are at front of checker list
-(dolist (checker '(clj-kondo-clj clj-kondo-cljs clj-kondo-cljc clj-kondo-edn))
-  (setq flycheck-checkers (cons checker (delq checker flycheck-checkers))))
+;; (dolist (checker '(clj-kondo-clj clj-kondo-cljs clj-kondo-cljc clj-kondo-edn))
+;;   (setq flycheck-checkers (cons checker (delq checker flycheck-checkers))))
 ;; clj-kondo calls joker after linting, even if there are errors
 ;; (dolist (checkers '((clj-kondo-clj . clojure-joker)
 ;;                     (clj-kondo-cljs . clojurescript-joker)
@@ -367,7 +367,7 @@
       lsp-headerline-breadcrumb-enable nil
       company-idle-delay 0.5
       lsp-idle-delay 0.5
-      company-minimum-prefix-length 1
+      company-minimum-prefix-length 2
       lsp-lens-enable t
       lsp-enable-file-watchers nil
       lsp-file-watch-threshold 10000
@@ -423,3 +423,4 @@
 
 ;; (setq clojure-align-separator 'entire)
 (add-to-list 'interpreter-mode-alist '("bb" . clojure-mode))
+

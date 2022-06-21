@@ -45,7 +45,7 @@
                             org-present
                             vterm ;; needs brew install cmake
                             markdown-toc
-                            flycheck-yamllint
+                            ;; flycheck-yamllint
                             ))
 
 ;; (require 'flycheck-joker)
@@ -440,7 +440,7 @@
 
 (define-key clojure-mode-map (kbd "<M-return>") 'clerk-show)
 
-(require 'flycheck-yamllint)
-(eval-after-load 'flycheck
-  '(add-hook 'flycheck-mode-hook 'flycheck-yamllint-setup))
+;; (require 'flycheck-yamllint)
+;; (eval-after-load 'flycheck
+;;   '(add-hook 'flycheck-mode-hook 'flycheck-yamllint-setup))
 

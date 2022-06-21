@@ -1,4 +1,4 @@
-;;; move-text-autoloads.el --- automatically extracted autoloads
+;;; move-text-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -58,7 +58,7 @@ Move the line or region (START END) down by N lines.
 (autoload 'move-text-default-bindings "move-text" "\
 Use default bindings for move-text-up and move-text-down (M-up / M-down)." t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "move-text" '("move-text-get-region-and-prefix")))
+(register-definition-prefixes "move-text" '("move-text-get-region-and-prefix"))
 
 ;;;***
 

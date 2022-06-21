@@ -1,4 +1,4 @@
-;;; python-environment-autoloads.el --- automatically extracted autoloads
+;;; python-environment-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -10,7 +10,7 @@
 ;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from python-environment.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "python-environment" '("python-environment-")))
+(register-definition-prefixes "python-environment" '("python-environment-"))
 
 ;;;***
 
@@ -18,7 +18,7 @@
 ;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from test-python-environment.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "test-python-environment" '("pye-")))
+(register-definition-prefixes "test-python-environment" '("pye-"))
 
 ;;;***
 

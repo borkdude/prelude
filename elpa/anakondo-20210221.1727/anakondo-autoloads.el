@@ -1,4 +1,4 @@
-;;; anakondo-autoloads.el --- automatically extracted autoloads
+;;; anakondo-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -20,7 +20,7 @@ the mode if ARG is omitted or nil, and toggle it if ARG is ‘toggle’.
 
 \(fn &optional ARG)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "anakondo" '("anakondo-")))
+(register-definition-prefixes "anakondo" '("anakondo-"))
 
 ;;;***
 

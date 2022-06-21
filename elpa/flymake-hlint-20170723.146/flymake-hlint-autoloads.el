@@ -1,4 +1,4 @@
-;;; flymake-hlint-autoloads.el --- automatically extracted autoloads
+;;; flymake-hlint-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -12,7 +12,7 @@
 (autoload 'flymake-hlint-load "flymake-hlint" "\
 Configure flymake mode to check the current buffer's hlint syntax." t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "flymake-hlint" '("flymake-hlint-")))
+(register-definition-prefixes "flymake-hlint" '("flymake-hlint-"))
 
 ;;;***
 

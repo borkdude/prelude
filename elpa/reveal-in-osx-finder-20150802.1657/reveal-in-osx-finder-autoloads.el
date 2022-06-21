@@ -1,4 +1,4 @@
-;;; reveal-in-osx-finder-autoloads.el --- automatically extracted autoloads
+;;; reveal-in-osx-finder-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -14,7 +14,7 @@
 Reveal the file associated with the current buffer in the OS X Finder.
 In a dired buffer, it will open the current directory." t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "reveal-in-osx-finder" '("reveal-in-osx-finder-as")))
+(register-definition-prefixes "reveal-in-osx-finder" '("reveal-in-osx-finder-as"))
 
 ;;;***
 

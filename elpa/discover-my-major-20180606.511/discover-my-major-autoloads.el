@@ -1,4 +1,4 @@
-;;; discover-my-major-autoloads.el --- automatically extracted autoloads
+;;; discover-my-major-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -21,7 +21,7 @@ Create a makey popup listing all MODE keys with their description.
 
 \(fn MODE)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "discover-my-major" '("dmm/")))
+(register-definition-prefixes "discover-my-major" '("dmm/"))
 
 ;;;***
 

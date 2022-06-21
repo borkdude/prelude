@@ -1,4 +1,4 @@
-;;; haml-mode-autoloads.el --- automatically extracted autoloads
+;;; haml-mode-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -18,7 +18,7 @@ Major mode for editing Haml files.
 
 (add-to-list 'auto-mode-alist '("\\.haml\\'" . haml-mode))
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "haml-mode" '("haml-")))
+(register-definition-prefixes "haml-mode" '("haml-"))
 
 ;;;***
 

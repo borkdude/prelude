@@ -1,4 +1,4 @@
-;;; concurrent-autoloads.el --- automatically extracted autoloads
+;;; concurrent-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -9,7 +9,7 @@
 ;;;### (autoloads nil "concurrent" "concurrent.el" (0 0 0 0))
 ;;; Generated autoloads from concurrent.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "concurrent" '("cc:")))
+(register-definition-prefixes "concurrent" '("cc:"))
 
 ;;;***
 

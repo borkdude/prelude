@@ -1,4 +1,4 @@
-;;; jedi-core-autoloads.el --- automatically extracted autoloads
+;;; jedi-core-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -88,7 +88,7 @@ Reinstall Jedi server script jediepcserver.py." t nil)
 (autoload 'jedi:install-server-block "jedi-core" "\
 Blocking version `jedi:install-server'." nil nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "jedi-core" '("jedi")))
+(register-definition-prefixes "jedi-core" '("jedi"))
 
 ;;;***
 

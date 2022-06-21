@@ -1,4 +1,4 @@
-;;; rvm-autoloads.el --- automatically extracted autoloads
+;;; rvm-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -27,7 +27,7 @@ switch the current ruby version to any ruby, which is installed with rvm
 
 \(fn GEMHOME)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "rvm" '("rvm")))
+(register-definition-prefixes "rvm" '("rvm"))
 
 ;;;***
 

@@ -1,4 +1,4 @@
-;;; purescript-mode-autoloads.el --- automatically extracted autoloads
+;;; purescript-mode-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -13,7 +13,7 @@
 (autoload 'purescript-align-imports "purescript-align-imports" "\
 Align all the imports in the buffer." t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "purescript-align-imports" '("purescript-align-imports-")))
+(register-definition-prefixes "purescript-align-imports" '("purescript-align-imports-"))
 
 ;;;***
 
@@ -21,7 +21,7 @@ Align all the imports in the buffer." t nil)
 ;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from purescript-collapse.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "purescript-collapse" '("purescript-collapse")))
+(register-definition-prefixes "purescript-collapse" '("purescript-collapse"))
 
 ;;;***
 
@@ -75,7 +75,7 @@ Invokes `purescript-decl-scan-mode-hook' on activation.
 
 \(fn &optional ARG)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "purescript-decl-scan" '("literate-purescript-ds-" "purescript-d")))
+(register-definition-prefixes "purescript-decl-scan" '("literate-purescript-ds-" "purescript-d"))
 
 ;;;***
 
@@ -85,7 +85,7 @@ Invokes `purescript-decl-scan-mode-hook' on activation.
 
 (autoload 'purescript-font-lock-choose-keywords "purescript-font-lock" nil nil nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "purescript-font-lock" '("purescript-" "turn-o")))
+(register-definition-prefixes "purescript-font-lock" '("purescript-" "turn-o"))
 
 ;;;***
 
@@ -122,7 +122,7 @@ Invokes `purescript-indent-hook' if not nil.
 
 \(fn &optional ARG)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "purescript-indent" '("purescript-indent-" "turn-off-purescript-indent")))
+(register-definition-prefixes "purescript-indent" '("purescript-indent-" "turn-off-purescript-indent"))
 
 ;;;***
 
@@ -136,17 +136,27 @@ It rebinds RET, DEL and BACKSPACE, so that indentations can be
 set and deleted as if they were real tabs.  It supports
 autofill-mode.
 
-If called interactively, enable Purescript-Indentation mode if
-ARG is positive, and disable it if ARG is zero or negative.  If
-called from Lisp, also enable the mode if ARG is omitted or nil,
-and toggle it if ARG is `toggle'; disable the mode otherwise.
+This is a minor mode.  If called interactively, toggle the
+`Purescript-Indentation mode' mode.  If the prefix argument is
+positive, enable the mode, and if it is zero or negative, disable
+the mode.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
+the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+To check whether the minor mode is enabled in the current buffer,
+evaluate `purescript-indentation-mode'.
+
+The mode's hook is called both when the mode is enabled and when
+it is disabled.
 
 \(fn &optional ARG)" t nil)
 
 (autoload 'turn-on-purescript-indentation "purescript-indentation" "\
 Turn on the purescript-indentation minor mode." t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "purescript-indentation" '("on-parse-error" "parse-error" "purescript-")))
+(register-definition-prefixes "purescript-indentation" '("on-parse-error" "parse-error" "purescript-"))
 
 ;;;***
 
@@ -198,7 +208,7 @@ As `purescript-mode' but for literate scripts.
 \(fn)" t nil)
 (add-to-list 'auto-mode-alist '("\\.purs\\'" . purescript-mode))
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "purescript-mode" '("purescript-")))
+(register-definition-prefixes "purescript-mode" '("purescript-"))
 
 ;;;***
 
@@ -234,7 +244,7 @@ of the region instead.
 
 \(fn COLS)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "purescript-move-nested" '("purescript-")))
+(register-definition-prefixes "purescript-move-nested" '("purescript-"))
 
 ;;;***
 
@@ -254,7 +264,7 @@ Go to the first line of a list of consequtive import lines. Cycles." t nil)
 Return to the non-import point we were at before going to the module list.
    If we were originally at an import list, we can just cycle through easily." t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "purescript-navigate-imports" '("purescript-navigate-imports-")))
+(register-definition-prefixes "purescript-navigate-imports" '("purescript-navigate-imports-"))
 
 ;;;***
 
@@ -262,7 +272,7 @@ Return to the non-import point we were at before going to the module list.
 ;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from purescript-presentation-mode.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "purescript-presentation-mode" '("purescript-present")))
+(register-definition-prefixes "purescript-presentation-mode" '("purescript-present"))
 
 ;;;***
 
@@ -287,7 +297,7 @@ Parse the given input into a tree.
 
 \(fn GIVEN)" nil nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "purescript-show" '("purescript-show-" "sexp-show")))
+(register-definition-prefixes "purescript-show" '("purescript-show-" "sexp-show"))
 
 ;;;***
 
@@ -304,10 +314,20 @@ previous nonblank line, whereas `purescript-simple-indent-backtab'
 previous indent point.  An indent point is a non-whitespace
 character following whitespace.
 
-If called interactively, enable Purescript-Simple-Indent mode if
-ARG is positive, and disable it if ARG is zero or negative.  If
-called from Lisp, also enable the mode if ARG is omitted or nil,
-and toggle it if ARG is `toggle'; disable the mode otherwise.
+This is a minor mode.  If called interactively, toggle the
+`Purescript-Simple-Indent mode' mode.  If the prefix argument is
+positive, enable the mode, and if it is zero or negative, disable
+the mode.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
+the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+To check whether the minor mode is enabled in the current buffer,
+evaluate `purescript-simple-indent-mode'.
+
+The mode's hook is called both when the mode is enabled and when
+it is disabled.
 
 Runs `purescript-simple-indent-hook' on activation.
 
@@ -316,7 +336,7 @@ Runs `purescript-simple-indent-hook' on activation.
 (autoload 'turn-on-purescript-simple-indent "purescript-simple-indent" "\
 Turn on function `purescript-simple-indent-mode'." t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "purescript-simple-indent" '("purescript-simple-indent" "turn-off-purescript-simple-indent")))
+(register-definition-prefixes "purescript-simple-indent" '("purescript-simple-indent" "turn-off-purescript-simple-indent"))
 
 ;;;***
 
@@ -326,7 +346,7 @@ Turn on function `purescript-simple-indent-mode'." t nil)
 
 (autoload 'purescript-sort-imports "purescript-sort-imports" nil t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "purescript-sort-imports" '("purescript-sort-imports-")))
+(register-definition-prefixes "purescript-sort-imports" '("purescript-sort-imports-"))
 
 ;;;***
 
@@ -334,7 +354,7 @@ Turn on function `purescript-simple-indent-mode'." t nil)
 ;;;;;;  0))
 ;;; Generated autoloads from purescript-str.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "purescript-str" '("purescript-str-")))
+(register-definition-prefixes "purescript-str" '("purescript-str-"))
 
 ;;;***
 
@@ -357,7 +377,7 @@ Is x string a prefix of y string?
 
 \(fn X Y)" nil nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "purescript-string" '("purescript-string")))
+(register-definition-prefixes "purescript-string" '("purescript-string"))
 
 ;;;***
 
@@ -375,7 +395,7 @@ See Info node `Unicode(purescript-mode)' for more details." t nil)
 ;;;;;;  0 0 0))
 ;;; Generated autoloads from purescript-utils.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "purescript-utils" '("purescript-utils-")))
+(register-definition-prefixes "purescript-utils" '("purescript-utils-"))
 
 ;;;***
 
@@ -388,7 +408,7 @@ See Info node `Unicode(purescript-mode)' for more details." t nil)
 
 \(fn &rest ARGS)" nil nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "purescript-yas" '("purescript-yas-")))
+(register-definition-prefixes "purescript-yas" '("purescript-yas-"))
 
 ;;;***
 

@@ -1,4 +1,4 @@
-;;; imenu-anywhere-autoloads.el --- automatically extracted autoloads
+;;; imenu-anywhere-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -41,7 +41,7 @@ Sorting is in increasing length of imenu symbols within each
 buffer.  The pyramidal view allows distinguishing different
 buffers." t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "imenu-anywhere" '("helm-imenu-anywhere-candidates" "imenu-anywhere-")))
+(register-definition-prefixes "imenu-anywhere" '("helm-imenu-anywhere-candidates" "imenu-anywhere-"))
 
 ;;;***
 

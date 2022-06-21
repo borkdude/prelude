@@ -1,4 +1,4 @@
-;;; multi-term-autoloads.el --- automatically extracted autoloads
+;;; multi-term-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -35,7 +35,7 @@ Toggle dedicated `multi-term' window." t nil)
 (autoload 'multi-term-dedicated-select "multi-term" "\
 Select the `multi-term' dedicated window." t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "multi-term" '("multi-term-" "term-")))
+(register-definition-prefixes "multi-term" '("multi-term-" "term-"))
 
 ;;;***
 

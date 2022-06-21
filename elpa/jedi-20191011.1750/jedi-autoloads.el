@@ -1,4 +1,4 @@
-;;; jedi-autoloads.el --- automatically extracted autoloads
+;;; jedi-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -30,7 +30,7 @@ Complete code at point.
 
 (setq jedi:setup-function #'jedi:ac-setup jedi:mode-function #'jedi:auto-complete-mode)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "jedi" '("jedi:")))
+(register-definition-prefixes "jedi" '("jedi:"))
 
 ;;;***
 

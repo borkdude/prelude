@@ -1,4 +1,4 @@
-;;; nlinum-autoloads.el --- automatically extracted autoloads
+;;; nlinum-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -34,16 +34,20 @@ or call the function `global-nlinum-mode'.")
 (autoload 'global-nlinum-mode "nlinum" "\
 Toggle Nlinum mode in all buffers.
 With prefix ARG, enable Global Nlinum mode if ARG is positive;
-otherwise, disable it.  If called from Lisp, enable the mode if
-ARG is omitted or nil.
+otherwise, disable it.
 
-Nlinum mode is enabled in all buffers where
-`(lambda nil (unless (minibufferp) (nlinum-mode)))' would do it.
+If called from Lisp, toggle the mode if ARG is `toggle'.
+Enable the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+Nlinum mode is enabled in all buffers where `(lambda nil (unless
+\(minibufferp) (nlinum-mode)))' would do it.
+
 See `nlinum-mode' for more information on Nlinum mode.
 
 \(fn &optional ARG)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "nlinum" '("nlinum-")))
+(register-definition-prefixes "nlinum" '("nlinum-"))
 
 ;;;***
 

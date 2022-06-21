@@ -1,4 +1,4 @@
-;;; ctable-autoloads.el --- automatically extracted autoloads
+;;; ctable-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -9,7 +9,7 @@
 ;;;### (autoloads nil "ctable" "ctable.el" (0 0 0 0))
 ;;; Generated autoloads from ctable.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ctable" '("ctbl:")))
+(register-definition-prefixes "ctable" '("ctbl:"))
 
 ;;;***
 

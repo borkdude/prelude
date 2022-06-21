@@ -1,4 +1,4 @@
-;;; operate-on-number-autoloads.el --- automatically extracted autoloads
+;;; operate-on-number-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -43,7 +43,7 @@ point for the operation if applicable.
 
 \(fn &optional ARG)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "operate-on-number" '("apply-to-number-at-point" "oon--" "operate-on-number-at-point-alist")))
+(register-definition-prefixes "operate-on-number" '("apply-to-number-at-point" "oon--" "operate-on-number-at-point-alist"))
 
 ;;;***
 

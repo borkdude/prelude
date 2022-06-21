@@ -1,4 +1,4 @@
-;;; flycheck-pos-tip-autoloads.el --- automatically extracted autoloads
+;;; flycheck-pos-tip-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -38,7 +38,7 @@ TTY frames.
 
 \(fn &optional ARG)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "flycheck-pos-tip" '("flycheck-pos-tip-")))
+(register-definition-prefixes "flycheck-pos-tip" '("flycheck-pos-tip-"))
 
 ;;;***
 

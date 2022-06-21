@@ -1,4 +1,4 @@
-;;; zop-to-char-autoloads.el --- automatically extracted autoloads
+;;; zop-to-char-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -28,7 +28,7 @@ backward direction.
 
 \(fn ARG)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "zop-to-char" '("zop-to-char-")))
+(register-definition-prefixes "zop-to-char" '("zop-to-char-"))
 
 ;;;***
 

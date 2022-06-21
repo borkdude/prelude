@@ -1,4 +1,4 @@
-;;; sass-mode-autoloads.el --- automatically extracted autoloads
+;;; sass-mode-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -18,7 +18,7 @@ Major mode for editing Sass files.
 
 (add-to-list 'auto-mode-alist '("\\.sass\\'" . sass-mode))
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "sass-mode" '("sass-")))
+(register-definition-prefixes "sass-mode" '("sass-"))
 
 ;;;***
 

@@ -1,4 +1,4 @@
-;;; slim-mode-autoloads.el --- automatically extracted autoloads
+;;; slim-mode-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -18,7 +18,7 @@ Major mode for editing Slim files.
 
 (add-to-list 'auto-mode-alist '("\\.slim\\'" . slim-mode))
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "slim-mode" '("html-tags" "slim-")))
+(register-definition-prefixes "slim-mode" '("html-tags" "slim-"))
 
 ;;;***
 

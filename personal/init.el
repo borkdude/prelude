@@ -45,6 +45,7 @@
                             org-present
                             vterm ;; needs brew install cmake
                             markdown-toc
+                            flycheck-yamllint
                             ))
 
 (require 'flycheck-joker)
@@ -263,7 +264,8 @@
   (setenv "SHELL" "/bin/zsh")
   (exec-path-from-shell-initialize)
   (exec-path-from-shell-copy-envs
-   '("PATH")))
+   '("PATH" "JAVA_HOME"))
+  (exec-path-from-shell-setenv "PATH" (concat "/Users/borkdude/dev/clj-kondo" ":" (getenv "PATH"))))
 
 (custom-set-variables
  '(show-trailing-whitespace t))
@@ -423,3 +425,21 @@
 
 ;; (setq clojure-align-separator 'entire)
 (add-to-list 'interpreter-mode-alist '("bb" . clojure-mode))
+
+;; (require 'neil)
+
+(defun clerk-show ()
+  (interactive)
+  (save-buffer)
+  (let
+      ((filename
+        (buffer-file-name)))
+    (when filename
+      (cider-interactive-eval
+       (concat "(nextjournal.clerk/show! \"" filename "\")")))))
+
+(define-key clojure-mode-map (kbd "<M-return>") 'clerk-show)
+
+(require 'flycheck-yamllint)
+(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook 'flycheck-yamllint-setup))

@@ -163,3 +163,24 @@ by Prelude.")
  (run-at-time 5 nil 'prelude-tip-of-the-day))
 
 ;;; init.el ends here
+
+(cider-register-cljs-repl-type 'clerk-browser-repl "(+ 1 2 3)")
+
+(defun mm/cider-connected-hook ()
+  (when (eq 'clerk-browser-repl cider-cljs-repl-type)
+    (setq-local cider-show-error-buffer nil)
+    (cider-set-repl-type 'cljs)))
+
+(add-hook 'cider-connected-hook #'mm/cider-connected-hook)
+
+(defun clerk-show ()
+  (interactive)
+  (save-buffer)
+  (let
+      ((filename
+        (buffer-file-name)))
+    (when filename
+      (cider-interactive-eval
+       (concat "(nextjournal.clerk/show! \"" filename "\")")))))
+
+(define-key clojure-mode-map (kbd "<M-return>") 'clerk-show)

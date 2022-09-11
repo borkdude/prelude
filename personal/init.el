@@ -374,7 +374,7 @@
       lsp-enable-file-watchers nil
       lsp-file-watch-threshold 10000
       lsp-signature-auto-activate nil
-      lsp-clojure-custom-server-command '("/Users/borkdude/Dropbox/bin/clojure-lsp")
+;;      lsp-clojure-custom-server-command '("/Users/borkdude/Dropbox/bin/clojure-lsp")
       lsp-diagnostics-provider :none
       lsp-enable-indentation nil ;; uncomment to use cider indentation instead of lsp
       ;; lsp-enable-completion-at-point nil ;; uncomment to use cider completion instead of lsp

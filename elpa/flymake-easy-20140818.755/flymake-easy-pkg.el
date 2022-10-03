@@ -1,2 +1,2 @@
 ;;; Generated package description from flymake-easy.el  -*- no-byte-compile: t -*-
-(define-package "flymake-easy" "20140818.755" "Helpers for easily building flymake checkers" 'nil :commit "de41ea49503f71f997e5c359a2ad08df696c0147" :authors '(("Steve Purcell" . "steve@sanityinc.com")) :maintainer '("Steve Purcell" . "steve@sanityinc.com") :keywords '("convenience" "internal") :url "https://github.com/purcell/flymake-easy")
+(define-package "flymake-easy" "20140818.755" "Helpers for easily building flymake checkers" 'nil :commit "09deafbcb5f094de8465c2bbfe270ba0f517f515" :authors '(("Steve Purcell" . "steve@sanityinc.com")) :maintainer '("Steve Purcell" . "steve@sanityinc.com") :keywords '("convenience" "internal") :url "https://github.com/purcell/flymake-easy")

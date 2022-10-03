@@ -3,7 +3,7 @@
     (epc "0.1.0")
     (python-environment "0.0.2")
     (cl-lib "0.5"))
-  :commit "81c5a42b83f3a3c9d062b487f48009def11310f8" :authors
+  :commit "ecb53487c6131d39931ab2927e4b77e9cbfb7204" :authors
   '(("Takafumi Arakaki <aka.tkf at gmail.com>"))
   :maintainer
   '("Takafumi Arakaki <aka.tkf at gmail.com>"))

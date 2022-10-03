@@ -362,19 +362,27 @@
 (add-hook 'clojurescript-mode-hook 'lsp)
 (add-hook 'clojurec-mode-hook 'lsp)
 
+
+;; (progn
+;;   (setq gc-cons-threshold (* 511 1024 1024))
+;;   (setq gc-cons-percentage 0.5)
+;;   (run-with-idle-timer 5 t #'garbage-collect)
+;;   (setq garbage-collection-messages t))
+
+(setq garbage-collection-messages t)
 ;; see https://emacs-lsp.github.io/lsp-mode/page/performance/
 (setq gc-cons-threshold (* 100 1024 1024)
       read-process-output-max (* 1024 1024)
       treemacs-space-between-root-nodes nil
       lsp-headerline-breadcrumb-enable nil
-      company-idle-delay 0.5
-      lsp-idle-delay 0.5
+      company-idle-delay 2
+      lsp-idle-delay 2
       company-minimum-prefix-length 2
       lsp-lens-enable t
       lsp-enable-file-watchers nil
       lsp-file-watch-threshold 10000
       lsp-signature-auto-activate nil
-;;      lsp-clojure-custom-server-command '("/Users/borkdude/Dropbox/bin/clojure-lsp")
+      lsp-clojure-custom-server-command '("/Users/borkdude/bin/clojure-lsp-2022-09-30")
       lsp-diagnostics-provider :none
       lsp-enable-indentation nil ;; uncomment to use cider indentation instead of lsp
       ;; lsp-enable-completion-at-point nil ;; uncomment to use cider completion instead of lsp

@@ -4,24 +4,24 @@
 ;;; My config
 
 ;;; Code:
-(prelude-require-packages '(markdown-mode
-                            multi-term
-                            slim-mode
-                            sass-mode
-                            rvm
-                            inf-clojure
-                            ag
-                            projectile-rails
-                            clj-refactor
-                            ;; flycheck-clojure
-                            flycheck-pos-tip
-                            jedi
-                            use-package
-                            neotree
-                            auto-highlight-symbol
-                            haskell-mode
-                            ;; intero
-                            flymake-hlint
+(prelude-require-packages '(;; markdown-mode
+                            ;; multi-term
+                            ;; slim-mode
+                            ;; sass-mode
+                            ;; rvm
+                            ;; inf-clojure
+                            ;; ag
+                            ;; projectile-rails
+                            ;; clj-refactor
+                            ;; ;; flycheck-clojure
+                            ;; flycheck-pos-tip
+                            ;; jedi
+                            ;; use-package
+                            ;; neotree
+                            ;; auto-highlight-symbol
+                            ;; haskell-mode
+                            ;; ;; intero
+                            ;; flymake-hlint
                             ;; hlint-refactor uses https://github.com/mpickering/apply-refact
                             ;; install by running the following outside a project dir: stack --resolver=nightly install apply-refact
                             hlint-refactor
@@ -35,22 +35,22 @@
                             reveal-in-osx-finder
                             exec-path-from-shell ;; fix path in Emacs by reading from .zshenv
                             flycheck-clj-kondo
-                            flycheck-rust
-                            rust-mode
+                            ;;flycheck-rust
+                            ;;rust-mode
                             lsp-mode ;; lsp-ui lsp-treemacs
-                            adoc-mode
-                            anakondo
-                            git-gutter
-                            flycheck-inline
-                            org-present
-                            vterm ;; needs brew install cmake
-                            markdown-toc
+                            ;;adoc-mode
+                            ;; anakondo
+                            ;; git-gutter
+                            ;; flycheck-inline
+                            ;; org-present
+                            ;; vterm ;; needs brew install cmake
+                            ;; markdown-toc
                             ;; flycheck-yamllint
                             ))
 
 ;; (require 'flycheck-joker)
 (require 'flycheck-clj-kondo)
-(require 'flycheck-rust)
+;; (require 'flycheck-rust)
 ;; (require 'anakondo)
 
 ;; ;; Enable anakondo-minor-mode in all Clojure buffers
@@ -156,7 +156,7 @@
 
 ;; clj-refactor
 
-(require 'clj-refactor)
+;; (require 'clj-refactor)
 
 (defun my-clojure-mode-hook ()
   (clj-refactor-mode 1)
@@ -219,11 +219,11 @@
 (require 'haskell-align-imports)
 
 ;; Highlighting
-(require 'auto-highlight-symbol)
-(global-auto-highlight-symbol-mode t)
-(mapc (lambda (mode)
-        (add-to-list 'ahs-modes mode))
-      '(clojure-mode clojurescript-mode cider-repl-mode haskell-mode javascript-mode))
+;; (require 'auto-highlight-symbol)
+;; (global-auto-highlight-symbol-mode t)
+;; (mapc (lambda (mode)
+;;         (add-to-list 'ahs-modes mode))
+;;       '(clojure-mode clojurescript-mode cider-repl-mode haskell-mode javascript-mode))
 
 (setq-default fill-column 80)
 
@@ -285,7 +285,7 @@
 
 (menu-bar-mode 0)
 
-(add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+;; (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
 
 (global-set-key [(hyper a)] 'mark-whole-buffer)
 (global-set-key [(hyper v)] 'yank)
@@ -321,8 +321,8 @@
   (defun track-mouse (e))
   (setq mouse-sel-mode t))
 
-(with-eval-after-load 'flycheck
-  (add-hook 'flycheck-mode-hook #'flycheck-inline-mode))
+;; (with-eval-after-load 'flycheck
+;;   (add-hook 'flycheck-mode-hook #'flycheck-inline-mode))
 
 ;; org-present
 
@@ -371,7 +371,7 @@
 
 (setq garbage-collection-messages t)
 ;; see https://emacs-lsp.github.io/lsp-mode/page/performance/
-(setq gc-cons-threshold (* 100 1024 1024)
+ (setq gc-cons-threshold (* 100 1024 1024)
       read-process-output-max (* 1024 1024)
       treemacs-space-between-root-nodes nil
       lsp-headerline-breadcrumb-enable nil
@@ -387,7 +387,7 @@
       lsp-enable-indentation nil ;; uncomment to use cider indentation instead of lsp
       ;; lsp-enable-completion-at-point nil ;; uncomment to use cider completion instead of lsp
 
-      lsp-completion-provider :capf
+      ;; lsp-completion-provider :capf
       lsp-enable-on-type-formatting nil)
 ;; or just disable lsp-diagnostics-mode for a single buffer
 
@@ -413,10 +413,10 @@
                (eq cursor (point)))
       (cider-find-var))))
 
-(define-key clojure-mode-map (kbd "M-.") #'find-definition)
-(define-key cider-mode-map (kbd "M-.") #'find-definition)
-(define-key clojurec-mode-map (kbd "M-.") #'find-definition)
-(define-key clojurescript-mode-map (kbd "M-.") #'find-definition)
+;; (define-key clojure-mode-map (kbd "M-.") #'find-definition)
+;; (define-key cider-mode-map (kbd "M-.") #'find-definition)
+;; (define-key clojurec-mode-map (kbd "M-.") #'find-definition)
+;; (define-key clojurescript-mode-map (kbd "M-.") #'find-definition)
 
 ;;;; Setting up flycheck clj-kondo -> joker chain
 ;; ensure that clj-kondo checkers are at front of checker list
@@ -446,9 +446,8 @@
       (cider-interactive-eval
        (concat "(nextjournal.clerk/show! \"" filename "\")")))))
 
-(define-key clojure-mode-map (kbd "<M-return>") 'clerk-show)
+;; (define-key clojure-mode-map (kbd "<M-return>") 'clerk-show)
 
 ;; (require 'flycheck-yamllint)
 ;; (eval-after-load 'flycheck
 ;;   '(add-hook 'flycheck-mode-hook 'flycheck-yamllint-setup))
-

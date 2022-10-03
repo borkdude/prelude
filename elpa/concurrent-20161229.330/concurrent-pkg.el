@@ -1,0 +1,2 @@
+;;; Generated package description from concurrent.el  -*- no-byte-compile: t -*-
+(define-package "concurrent" "20161229.330" "Concurrent utility functions for emacs lisp" '((emacs "24.3") (deferred "0.5.0")) :commit "9668749635472a63e7a9282e2124325405199b79" :authors '(("SAKURAI Masashi <m.sakurai at kiwanami.net>")) :maintainer '("SAKURAI Masashi <m.sakurai at kiwanami.net>") :keywords '("deferred" "async" "concurrent") :url "https://github.com/kiwanami/emacs-deferred/blob/master/README-concurrent.markdown")

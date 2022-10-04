@@ -32,6 +32,8 @@ prelude-cheatsheet.log
 transient/
 .cache/
 .lsp-session*
+gotools/
+eln-cache/
 
 ## customized by me
 elpa/vterm-**/build*

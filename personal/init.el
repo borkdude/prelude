@@ -457,3 +457,16 @@
       (buf (find-file-noselect "/Users/borkdude/Dropbox/notes/worklog.org")))
   (switch-to-buffer buf))
 (other-frame 1)
+
+(cider-register-cljs-repl-type 'nbb "(+ 1 2 3)")
+
+(defun mm/cider-connected-hook ()
+  (when (eq 'nbb cider-cljs-repl-type)
+    (setq-local cider-show-error-buffer nil)
+    (cider-set-repl-type 'cljs)))
+
+(add-hook 'cider-connected-hook #'mm/cider-connected-hook)
+
+(with-eval-after-load 'cider
+  (cider-register-cljs-repl-type 'nbb "(+ 1 2 3)")
+  )

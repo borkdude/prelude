@@ -452,3 +452,8 @@
 ;; (eval-after-load 'flycheck
 ;;   '(add-hook 'flycheck-mode-hook 'flycheck-yamllint-setup))
 
+(global-set-key (kbd "H-`") 'other-frame)
+(let ((frame (make-frame))
+      (buf (find-file-noselect "/Users/borkdude/Dropbox/notes/worklog.org")))
+  (switch-to-buffer buf))
+(other-frame 1)

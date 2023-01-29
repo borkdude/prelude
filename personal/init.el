@@ -86,12 +86,18 @@
 ;;           (set-visited-file-name new-name)
 ;;           (set-buffer-modified-p nil))))))
 
+(require 'lsp)
+
 (defun iwb ()
   "Indent whole buffer."
   (interactive)
   (delete-trailing-whitespace)
-  (indent-region (point-min) (point-max) nil)
+  (if (and (lsp-workspaces)
+           (lsp--capability "documentFormattingProvider"))
+      (lsp-format-buffer)
+    (indent-region (point-min) (point-max) nil))
   (untabify (point-min) (point-max)))
+
 (global-set-key (kbd "<f7>") 'iwb)
 
 ;; (add-hook 'mouse-leave-buffer-hook
@@ -382,7 +388,7 @@
       lsp-enable-file-watchers nil
       lsp-file-watch-threshold 10000
       lsp-signature-auto-activate nil
-      ;; lsp-clojure-custom-server-command '("/Users/borkdude/bin/clojure-lsp-2022-09-30")
+      ;; lsp-clojure-custom-server-command '("/Users/borkdude/bin/clojure-lsp-dev")
       lsp-diagnostics-provider :none
       lsp-enable-indentation nil ;; uncomment to use cider indentation instead of lsp
       ;; lsp-enable-completion-at-point nil ;; uncomment to use cider completion instead of lsp
@@ -409,9 +415,10 @@
   (let ((cursor (point))
         (buffer (current-buffer)))
     (lsp-find-definition)
-    (when (and (eq buffer (current-buffer))
-               (eq cursor (point)))
-      (cider-find-var))))
+    ;; (when (and (eq buffer (current-buffer))
+    ;;            (eq cursor (point)))
+    ;;   (cider-find-var))
+    ))
 
 (define-key clojure-mode-map (kbd "M-.") #'find-definition)
 (define-key cider-mode-map (kbd "M-.") #'find-definition)

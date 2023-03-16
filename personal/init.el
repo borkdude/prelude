@@ -34,7 +34,7 @@
                             purescript-mode
                             reveal-in-osx-finder
                             exec-path-from-shell ;; fix path in Emacs by reading from .zshenv
-                            flycheck-clj-kondo
+                            ;; flycheck-clj-kondo
                             flycheck-rust
                             rust-mode
                             lsp-mode ;; lsp-ui lsp-treemacs
@@ -49,7 +49,7 @@
                             ))
 
 ;; (require 'flycheck-joker)
-(require 'flycheck-clj-kondo)
+;; (require 'flycheck-clj-kondo)
 (require 'flycheck-rust)
 ;; (require 'anakondo)
 
@@ -389,7 +389,7 @@
       lsp-file-watch-threshold 10000
       lsp-signature-auto-activate nil
       lsp-clojure-custom-server-command '("/Users/borkdude/bin/clojure-lsp-dev")
-      lsp-diagnostics-provider :none
+      ;; lsp-diagnostics-provider :none
       lsp-enable-indentation nil ;; uncomment to use cider indentation instead of lsp
       ;; lsp-enable-completion-at-point nil ;; uncomment to use cider completion instead of lsp
 

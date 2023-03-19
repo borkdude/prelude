@@ -383,7 +383,7 @@
       lsp-headerline-breadcrumb-enable nil
       ;; company-idle-delay 2
       ;; company-minimum-prefix-length 2
-      lsp-semantic-tokens-enable t
+      lsp-semantic-tokens-enable nil
       lsp-idle-delay 0.2
       lsp-lens-enable t
       lsp-enable-file-watchers nil

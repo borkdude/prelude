@@ -34,10 +34,10 @@
                             purescript-mode
                             reveal-in-osx-finder
                             exec-path-from-shell ;; fix path in Emacs by reading from .zshenv
-                            flycheck-clj-kondo
+                            ;; flycheck-clj-kondo
                             flycheck-rust
                             rust-mode
-                            lsp-mode ;; lsp-ui lsp-treemacs
+                            ;; lsp-mode ;; lsp-ui lsp-treemacs
                             adoc-mode
                             anakondo
                             git-gutter
@@ -46,10 +46,10 @@
                             vterm ;; needs brew install cmake
                             markdown-toc
                             ;; flycheck-yamllint
-                            ))
+                            eglot))
 
 ;; (require 'flycheck-joker)
-(require 'flycheck-clj-kondo)
+;; (require 'flycheck-clj-kondo)
 (require 'flycheck-rust)
 ;; (require 'anakondo)
 
@@ -364,37 +364,37 @@
 ;; clojure-lsp
 ;; see https://emacs-lsp.github.io/lsp-mode/tutorials/clojure-guide/
 
-(add-hook 'clojure-mode-hook 'lsp)
-(add-hook 'clojurescript-mode-hook 'lsp)
-(add-hook 'clojurec-mode-hook 'lsp)
+;; (add-hook 'clojure-mode-hook 'lsp)
+;; (add-hook 'clojurescript-mode-hook 'lsp)
+;; (add-hook 'clojurec-mode-hook 'lsp)
 
 
-;; (progn
-;;   (setq gc-cons-threshold (* 511 1024 1024))
-;;   (setq gc-cons-percentage 0.5)
-;;   (run-with-idle-timer 5 t #'garbage-collect)
-;;   (setq garbage-collection-messages t))
+;; ;; (progn
+;; ;;   (setq gc-cons-threshold (* 511 1024 1024))
+;; ;;   (setq gc-cons-percentage 0.5)
+;; ;;   (run-with-idle-timer 5 t #'garbage-collect)
+;; ;;   (setq garbage-collection-messages t))
 
-(setq garbage-collection-messages t)
-;; see https://emacs-lsp.github.io/lsp-mode/page/performance/
-(setq gc-cons-threshold (* 100 1024 1024)
-      read-process-output-max (* 1024 1024)
-      treemacs-space-between-root-nodes nil
-      lsp-headerline-breadcrumb-enable nil
-      company-idle-delay 2
-      lsp-idle-delay 2
-      company-minimum-prefix-length 2
-      lsp-lens-enable t
-      lsp-enable-file-watchers nil
-      lsp-file-watch-threshold 10000
-      lsp-signature-auto-activate nil
-      lsp-clojure-custom-server-command '("/Users/borkdude/bin/clojure-lsp-dev")
-      lsp-diagnostics-provider :none
-      lsp-enable-indentation nil ;; uncomment to use cider indentation instead of lsp
-      ;; lsp-enable-completion-at-point nil ;; uncomment to use cider completion instead of lsp
+;; (setq garbage-collection-messages t)
+;; ;; see https://emacs-lsp.github.io/lsp-mode/page/performance/
+;; (setq gc-cons-threshold (* 100 1024 1024)
+;;       read-process-output-max (* 1024 1024)
+;;       treemacs-space-between-root-nodes nil
+;;       lsp-headerline-breadcrumb-enable nil
+;;       company-idle-delay 2
+;;       lsp-idle-delay 2
+;;       company-minimum-prefix-length 2
+;;       lsp-lens-enable t
+;;       lsp-enable-file-watchers nil
+;;       lsp-file-watch-threshold 10000
+;;       lsp-signature-auto-activate nil
+;;       lsp-clojure-custom-server-command '("/Users/borkdude/bin/clojure-lsp-dev")
+;;       lsp-diagnostics-provider :none
+;;       lsp-enable-indentation nil ;; uncomment to use cider indentation instead of lsp
+;;       ;; lsp-enable-completion-at-point nil ;; uncomment to use cider completion instead of lsp
 
-      lsp-completion-provider :capf
-      lsp-enable-on-type-formatting nil)
+;;       lsp-completion-provider :capf
+;;       lsp-enable-on-type-formatting nil)
 ;; or just disable lsp-diagnostics-mode for a single buffer
 
 ;; (setq lsp-ui-peek-list-width 60
@@ -477,3 +477,20 @@
 (with-eval-after-load 'cider
   (cider-register-cljs-repl-type 'nbb "(+ 1 2 3)")
   )
+
+;; My personal settings that you might not require
+(add-hook 'clojure-mode-hook 'eglot-ensure)
+(custom-set-variables '(eglot-connect-timeout 3000))
+
+(defun project-try-clojure-project (dir)
+  "Try to locate a Clojure project."
+  (when-let ((found (clojure-project-dir)))
+    (cons 'transient found)))
+
+(defun find-clojure-project-advice (orig-fun &rest args)
+  "Fix project-root for the clojure monorepo setup."
+  (let ((project-find-functions
+         (cons 'project-try-clojure-project project-find-functions)))
+    (apply orig-fun args)))
+
+(advice-add 'eglot-ensure :around #'find-clojure-project-advice)

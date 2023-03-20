@@ -382,7 +382,7 @@
       treemacs-space-between-root-nodes nil
       lsp-headerline-breadcrumb-enable nil
       ;; company-idle-delay 2
-      ;;lsp-idle-delay 2
+      lsp-idle-delay 0.05
       ;; company-minimum-prefix-length 2
       lsp-lens-enable t
       lsp-enable-file-watchers nil

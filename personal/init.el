@@ -46,7 +46,9 @@
                             vterm ;; needs brew install cmake
                             markdown-toc
                             ;; flycheck-yamllint
-                            ))
+                            nvm))
+
+(nvm-use "20")
 
 ;; (require 'flycheck-joker)
 (require 'flycheck-clj-kondo)
@@ -271,7 +273,8 @@
   (exec-path-from-shell-initialize)
   (exec-path-from-shell-copy-envs
    '("PATH" "JAVA_HOME"))
-  (exec-path-from-shell-setenv "PATH" (concat "/Users/borkdude/dev/clj-kondo" ":" (getenv "PATH"))))
+  (exec-path-from-shell-setenv "PATH" (concat "/Users/borkdude/dev/clj-kondo" ":" (getenv "PATH")))
+  (exec-path-from-shell-setenv "PATH" (concat (getenv "NVM_BIN") ":" (getenv "PATH"))))
 
 (custom-set-variables
  '(show-trailing-whitespace t))
@@ -381,15 +384,15 @@
       read-process-output-max (* 1024 1024)
       treemacs-space-between-root-nodes nil
       lsp-headerline-breadcrumb-enable nil
-      company-idle-delay 2
-      lsp-idle-delay 2
+      ;; company-idle-delay 2
+      lsp-idle-delay 0.05
       company-minimum-prefix-length 2
       lsp-lens-enable t
       lsp-enable-file-watchers nil
       lsp-file-watch-threshold 10000
-      lsp-signature-auto-activate nil
+      ;; lsp-signature-auto-activate nil
       lsp-clojure-custom-server-command '("/Users/borkdude/bin/clojure-lsp-dev")
-      lsp-diagnostics-provider :none
+      ;; lsp-diagnostics-provider :none
       lsp-enable-indentation nil ;; uncomment to use cider indentation instead of lsp
       ;; lsp-enable-completion-at-point nil ;; uncomment to use cider completion instead of lsp
 

@@ -31,6 +31,10 @@ switch the current ruby version to any ruby, which is installed with rvm
 
 ;;;***
 
+;;;### (autoloads nil nil ("rvm-pkg.el") (0 0 0 0))
+
+;;;***
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t

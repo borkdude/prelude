@@ -16,6 +16,10 @@ Configure flymake mode to check the current buffer's hlint syntax." t nil)
 
 ;;;***
 
+;;;### (autoloads nil nil ("flymake-hlint-pkg.el") (0 0 0 0))
+
+;;;***
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t

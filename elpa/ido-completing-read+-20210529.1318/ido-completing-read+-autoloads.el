@@ -104,6 +104,11 @@ when ido completion is or is not used by customizing
 
 ;;;***
 
+;;;### (autoloads nil nil ("ido-completing-read+-pkg.el") (0 0 0
+;;;;;;  0))
+
+;;;***
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t

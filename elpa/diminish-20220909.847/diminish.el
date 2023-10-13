@@ -5,8 +5,6 @@
 ;; Author: Will Mengarini <seldon@eskimo.com>
 ;; Maintainer: Martin Yrjölä <martin.yrjola@gmail.com>
 ;; URL: https://github.com/myrjola/diminish.el
-;; Package-Version: 20220909.847
-;; Package-Commit: fbd5d846611bad828e336b25d2e131d1bc06b83d
 ;; Created: Th 19 Feb 98
 ;; Version: 0.46
 ;; Package-Requires: ((emacs "24.3"))

@@ -87,6 +87,10 @@ anzu version of `isearch-query-replace-regexp'.
 
 ;;;***
 
+;;;### (autoloads nil nil ("anzu-pkg.el") (0 0 0 0))
+
+;;;***
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t

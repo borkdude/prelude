@@ -34,6 +34,10 @@ Complete code at point.
 
 ;;;***
 
+;;;### (autoloads nil nil ("jedi-pkg.el") (0 0 0 0))
+
+;;;***
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t

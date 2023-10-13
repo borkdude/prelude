@@ -3,8 +3,6 @@
 ;; Copyright (C) 2011-2016 Vitalie Spinu
 ;; Author: Vitalie Spinu  <spinuvit.list[ aaattt ]gmail[ dot ]com>
 ;; Version: 1.1.6
-;; Package-Version: 20210201.1704
-;; Package-Commit: 06ec33d79e33edf01b9118aead1eabeae8ee08b1
 ;; Keywords: ido, imenu, tags
 ;; URL: https://github.com/vitoshka/imenu-anywhere
 ;; Package-Requires: ((cl-lib "0.5") (emacs "25"))

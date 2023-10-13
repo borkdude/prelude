@@ -39,6 +39,10 @@ it is disabled.
 
 ;;;***
 
+;;;### (autoloads nil nil ("flx-ido-pkg.el") (0 0 0 0))
+
+;;;***
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t

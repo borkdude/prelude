@@ -4,8 +4,6 @@
 
 ;; Author: Taylor R. Campbell <campbell@paredit.org>
 ;; Version: 27beta
-;; Package-Version: 20221127.1452
-;; Package-Commit: d700549d8aad684f1fabcfff565a9ad8b468199b
 ;; Created: 2005-07-31
 ;; Keywords: lisp
 ;; URL: https://paredit.org

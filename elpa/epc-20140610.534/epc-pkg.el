@@ -3,6 +3,8 @@
     (ctable "0.1.2"))
   :commit "94cd36a3bec752263ac9b1b3a9dd2def329d2af7" :authors
   '(("SAKURAI Masashi <m.sakurai at kiwanami.net>"))
+  :maintainers
+  '(("SAKURAI Masashi <m.sakurai at kiwanami.net>"))
   :maintainer
   '("SAKURAI Masashi <m.sakurai at kiwanami.net>")
   :keywords

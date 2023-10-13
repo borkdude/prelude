@@ -39,6 +39,10 @@ Select the `multi-term' dedicated window." t nil)
 
 ;;;***
 
+;;;### (autoloads nil nil ("multi-term-pkg.el") (0 0 0 0))
+
+;;;***
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t

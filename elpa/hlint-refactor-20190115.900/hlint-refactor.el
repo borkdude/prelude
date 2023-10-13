@@ -4,8 +4,6 @@
 
 ;; Author Matthew Pickering
 ;; Keywords: haskell, refactor
-;; Package-Version: 20190115.900
-;; Package-Commit: c4307f86aad6d02e32e9b30cb6edc115584c791c
 ;; Version: 0.0.1
 ;; URL: https://github.com/mpickering/hlint-refactor-mode
 
@@ -99,5 +97,3 @@ ARGS specifies additional arguments that are passed to hlint."
 (provide 'hlint-refactor)
 
 ;;; hlint-refactor-mode.el ends here
-
-;;; hlint-refactor.el ends here

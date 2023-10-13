@@ -57,6 +57,10 @@ Argument SYM-NAME is the thing to find.
 
 ;;;***
 
+;;;### (autoloads nil nil ("elisp-slime-nav-pkg.el") (0 0 0 0))
+
+;;;***
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t

@@ -25,6 +25,10 @@ Create a makey popup listing all MODE keys with their description.
 
 ;;;***
 
+;;;### (autoloads nil nil ("discover-my-major-pkg.el") (0 0 0 0))
+
+;;;***
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t

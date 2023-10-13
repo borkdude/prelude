@@ -4,8 +4,6 @@
 
 ;; Author: steckerhalter
 ;; Package-Requires: ((makey "0.2"))
-;; Package-Version: 20180606.511
-;; Package-Commit: 66081546eac360c83a9c3270db92a2164288b0d0
 ;; URL: https://framagit.org/steckerhalter/discover-my-major
 ;; Keywords: discover help major-mode keys
 

@@ -18,6 +18,10 @@ Initializes KEY-GROUP and creates all the relevant interactive commands.
 
 ;;;***
 
+;;;### (autoloads nil nil ("makey-pkg.el") (0 0 0 0))
+
+;;;***
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t

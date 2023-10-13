@@ -115,6 +115,10 @@ Kill all `ag-mode' buffers other than the current buffer." t nil)
 
 ;;;***
 
+;;;### (autoloads nil nil ("ag-pkg.el") (0 0 0 0))
+
+;;;***
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t

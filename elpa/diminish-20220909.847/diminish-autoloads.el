@@ -51,6 +51,10 @@ what diminished modes would be on the mode-line if they were still minor." t nil
 
 ;;;***
 
+;;;### (autoloads nil nil ("diminish-pkg.el") (0 0 0 0))
+
+;;;***
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t

@@ -4,8 +4,6 @@
 ;;
 ;; Author: Ric Lister
 ;; Version: 0.1
-;; Package-Version: 20220806.1847
-;; Package-Commit: 4ec04e1b77dea76d7c30066ccf3200d2e0b7bee9
 ;; Package-Requires: ((org "7"))
 ;; URL: https://github.com/rlister/org-present
 ;;

@@ -9,8 +9,6 @@
 ;;               Dan McKinley
 ;;               Marcelo Muñoz Araya <ma.munoz.araya@gmail.com>
 ;; Version: 1.4.0
-;; Package-Version: 20171128.406
-;; Package-Commit: b2712a61d04af98a05cc2556d85479803b6626be
 ;; Package-Requires: ((emacs "24.1") (gh "0.10.0"))
 ;; Keywords: tools
 ;; Homepage: https://github.com/defunkt/gist.el

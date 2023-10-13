@@ -59,6 +59,10 @@ See `guru-mode' for more information on Guru mode.
 
 ;;;***
 
+;;;### (autoloads nil nil ("guru-mode-pkg.el") (0 0 0 0))
+
+;;;***
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t

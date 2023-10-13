@@ -62,6 +62,10 @@ Bind `move-text-up' and `move-text-down' to M-up & M-down." t nil)
 
 ;;;***
 
+;;;### (autoloads nil nil ("move-text-pkg.el") (0 0 0 0))
+
+;;;***
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t

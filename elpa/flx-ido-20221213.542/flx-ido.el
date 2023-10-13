@@ -7,8 +7,6 @@
 ;; Description: flx integration for ido
 ;; Created: Sun Apr 21 20:38:36 2013 (+0800)
 ;; Version: 0.6.2
-;; Package-Version: 20221213.542
-;; Package-Commit: 7b44a5abb254bbfbeca7a29336f7f4ebd8aabbf2
 ;; URL: https://github.com/lewang/flx
 ;; Package-Requires: ((flx "0.1") (cl-lib "0.3"))
 

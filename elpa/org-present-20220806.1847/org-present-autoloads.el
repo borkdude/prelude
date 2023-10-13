@@ -16,6 +16,10 @@ Start org presentation." t nil)
 
 ;;;***
 
+;;;### (autoloads nil nil ("org-present-pkg.el") (0 0 0 0))
+
+;;;***
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t

@@ -24,6 +24,10 @@ the mode if ARG is omitted or nil, and toggle it if ARG is ‘toggle’.
 
 ;;;***
 
+;;;### (autoloads nil nil ("anakondo-pkg.el") (0 0 0 0))
+
+;;;***
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t

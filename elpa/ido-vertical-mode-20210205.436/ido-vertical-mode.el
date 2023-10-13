@@ -5,8 +5,6 @@
 ;; Author: Steven Degutis
 ;; Maintainer: Christopher Reichert <creichert07@gmail.com>
 ;; Version: 1.0.1
-;; Package-Version: 20210205.436
-;; Package-Commit: b1659e967da0687abceca733b389ace24004fa66
 ;; Package-Requires: ((emacs "24.4"))
 ;; Keywords: convenience
 ;; URL: https://github.com/creichert/ido-vertical-mode.el

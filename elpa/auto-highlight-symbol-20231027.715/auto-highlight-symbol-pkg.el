@@ -1,0 +1,15 @@
+(define-package "auto-highlight-symbol" "20231027.715" "Automatic highlighting current symbol minor mode"
+  '((emacs "26.1")
+    (ht "2.3"))
+  :commit "1c79083b9b6af70b0eba3d4c00cafafeb6154845" :authors
+  '(("Mitsuo Saito" . "arch320@NOSPAM.gmail.com"))
+  :maintainers
+  '(("Shen, Jen-Chieh" . "jcs090218@gmail.com"))
+  :maintainer
+  '("Shen, Jen-Chieh" . "jcs090218@gmail.com")
+  :keywords
+  '("highlight" "face" "match" "convenience")
+  :url "http://github.com/jcs-elpa/auto-highlight-symbol")
+;; Local Variables:
+;; no-byte-compile: t
+;; End:

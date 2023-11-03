@@ -95,8 +95,9 @@
   (interactive)
   (delete-trailing-whitespace)
   (if (and (lsp-workspaces)
-           (lsp--capability "documentFormattingProvider"))
-      (lsp-format-buffer)
+           (lsp--capability "documentFormattingProvider")
+           )
+      ;; (lsp-format-buffer)
     (indent-region (point-min) (point-max) nil))
   (untabify (point-min) (point-max)))
 
@@ -410,7 +411,8 @@
 
 (defun find-refs ()
   (interactive)
-  (lsp-find-references t))
+  (lsp-find-references t)
+  )
 
 (defun find-definition ()
   "Try to find definition of cursor via LSP otherwise fallback to cider."
@@ -418,9 +420,9 @@
   (let ((cursor (point))
         (buffer (current-buffer)))
     (lsp-find-definition)
-    ;; (when (and (eq buffer (current-buffer))
-    ;;            (eq cursor (point)))
-    ;;   (cider-find-var))
+    (when (and (eq buffer (current-buffer))
+               (eq cursor (point)))
+      (cider-find-var))
     ))
 
 (define-key clojure-mode-map (kbd "M-.") #'find-definition)

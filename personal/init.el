@@ -2,6 +2,7 @@
 
 ;;; Commentary:
 ;;; My config
+(set-frame-font "Menlo" nil t)
 
 ;;; Code:
 (prelude-require-packages '(markdown-mode

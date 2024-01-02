@@ -167,19 +167,6 @@
 ;; clj-refactor
 ;; (require 'clj-refactor)
 
-(defun my-clojure-mode-hook ()
-  ;; (clj-refactor-mode 1)
-  (yas-minor-mode 1) ; for adding require/use/import statements
-  ;; This choice of keybinding leaves cider-macroexpand-1 unbound
-  (cljr-add-keybindings-with-prefix "C-c C-m"))
-
-(setq cljr-favor-prefix-notation nil)
-
-(add-hook 'clojure-mode-hook #'my-clojure-mode-hook)
-
-;; cider cljs repl setting - start with cider-create-sibling-cljs-repl in project
-(setq cider-cljs-boot-repl "(do (in-ns boot.user) (start-repl))")
-
 ;; neotree
 (setq neo-smart-open t)
 (setq projectile-switch-project-action 'neotree-projectile-action)

@@ -13,7 +13,7 @@
                             inf-clojure
                             ag
                             projectile-rails
-                            clj-refactor
+                            ;; clj-refactor
                             ;; flycheck-clojure
                             flycheck-pos-tip
                             jedi
@@ -165,11 +165,10 @@
   (server-start))
 
 ;; clj-refactor
-
-(require 'clj-refactor)
+;; (require 'clj-refactor)
 
 (defun my-clojure-mode-hook ()
-  (clj-refactor-mode 1)
+  ;; (clj-refactor-mode 1)
   (yas-minor-mode 1) ; for adding require/use/import statements
   ;; This choice of keybinding leaves cider-macroexpand-1 unbound
   (cljr-add-keybindings-with-prefix "C-c C-m"))
@@ -380,7 +379,7 @@
 ;;   (run-with-idle-timer 5 t #'garbage-collect)
 ;;   (setq garbage-collection-messages t))
 
-(setq garbage-collection-messages t)
+;; (setq garbage-collection-messages t)
 ;; see https://emacs-lsp.github.io/lsp-mode/page/performance/
 (setq gc-cons-threshold (* 100 1024 1024)
       read-process-output-max (* 1024 1024)
@@ -425,6 +424,9 @@
                (eq cursor (point)))
       (cider-find-var))
     ))
+
+(require 'clojure-mode)
+(require 'cider)
 
 (define-key clojure-mode-map (kbd "M-.") #'find-definition)
 (define-key cider-mode-map (kbd "M-.") #'find-definition)
@@ -483,3 +485,19 @@
 (with-eval-after-load 'cider
   (cider-register-cljs-repl-type 'nbb "(+ 1 2 3)")
   )
+
+(defun ed/setup-js-and-typescript ()
+  (interactive)
+  (setq js2-mode-show-parse-errors nil)
+  (setq js2-mode-show-strict-warnings nil)
+  (lsp-mode)
+  (flycheck-mode +1)
+  ;; (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (eldoc-mode +1)
+  (setq js-indent-level 2)
+  (setq typescript-indent-level 2)
+  (define-key js-mode-map (kbd "M-.") 'lsp-find-definition)
+  (subword-mode +1)
+  (yas-minor-mode-on))
+
+(add-hook 'js-mode-hook #'ed/setup-js-and-typescript)

@@ -501,3 +501,10 @@
   (yas-minor-mode-on))
 
 (add-hook 'js-mode-hook #'ed/setup-js-and-typescript)
+
+;; https://emacs.stackexchange.com/a/13096/22096
+(defun my-reload-dir-locals-for-current-buffer ()
+  "reload dir locals for the current buffer"
+  (interactive)
+  (let ((enable-local-variables :all))
+    (hack-dir-local-variables-non-file-buffer)))

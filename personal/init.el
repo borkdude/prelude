@@ -104,6 +104,9 @@
 
 (global-set-key (kbd "<f7>") 'iwb)
 
+(global-set-key (kbd "<f9>") 'profiler-start)
+(global-set-key (kbd "<f10>") 'profiler-stop)
+
 ;; (add-hook 'mouse-leave-buffer-hook
 ;;           (lambda ()
 ;;             (let ((mode (message "%s" major-mode)))
@@ -460,18 +463,18 @@
   (switch-to-buffer buf))
 (other-frame 1)
 
-(cider-register-cljs-repl-type 'nbb "(+ 1 2 3)")
+;; (cider-register-cljs-repl-type 'nbb "(+ 1 2 3)")
 
-(defun mm/cider-connected-hook ()
-  (when (eq 'nbb cider-cljs-repl-type)
-    (setq-local cider-show-error-buffer nil)
-    (cider-set-repl-type 'cljs)))
+;; (defun mm/cider-connected-hook ()
+;;   (when (eq 'nbb cider-cljs-repl-type)
+;;     (setq-local cider-show-error-buffer nil)
+;;     (cider-set-repl-type 'cljs)))
 
-(add-hook 'cider-connected-hook #'mm/cider-connected-hook)
+;; (add-hook 'cider-connected-hook #'mm/cider-connected-hook)
 
-(with-eval-after-load 'cider
-  (cider-register-cljs-repl-type 'nbb "(+ 1 2 3)")
-  )
+;; (with-eval-after-load 'cider
+;;   (cider-register-cljs-repl-type 'nbb "(+ 1 2 3)")
+;;   )
 
 (defun ed/setup-js-and-typescript ()
   (interactive)
@@ -495,3 +498,5 @@
   (interactive)
   (let ((enable-local-variables :all))
     (hack-dir-local-variables-non-file-buffer)))
+
+(set-mouse-color "white")

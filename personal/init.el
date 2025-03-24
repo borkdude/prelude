@@ -500,3 +500,5 @@
     (hack-dir-local-variables-non-file-buffer)))
 
 (set-mouse-color "white")
+
+(setq lsp-signature-function #'lsp-signature-posframe)

@@ -47,7 +47,8 @@
                             vterm ;; needs brew install cmake
                             markdown-toc
                             ;; flycheck-yamllint
-                            nvm))
+                            nvm
+                            posframe))
 
 (nvm-use "20")
 
@@ -501,4 +502,5 @@
 
 (set-mouse-color "white")
 
+(require 'posframe)
 (setq lsp-signature-function #'lsp-signature-posframe)

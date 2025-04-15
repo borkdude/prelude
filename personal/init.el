@@ -4,6 +4,14 @@
 ;;; My config
 (set-frame-font "Menlo" nil t)
 
+;; fix for issue https://github.com/railwaycat/homebrew-emacsmacport/issues/384#issuecomment-2643696683
+(defun my/tool-bar-on-and-off ()
+  (tool-bar-mode 1)
+  (tool-bar-mode 0))
+
+(add-hook 'window-setup-hook #'my/tool-bar-on-and-off)
+(add-hook 'after-make-frame-functions (lambda (frame) (my/tool-bar-on-and-off)))
+
 ;;; Code:
 (prelude-require-packages '(markdown-mode
                             multi-term
@@ -554,4 +562,4 @@ Includes Homebrew GCC paths and CommandLineTools SDK libraries."
 
 ;; Set up library paths for native compilation on macOS.
 (when (eq system-type 'darwin)
-  (setup-macos-native-comp-library-paths)
+  (setup-macos-native-comp-library-paths))

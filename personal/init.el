@@ -43,7 +43,7 @@
                             purescript-mode
                             reveal-in-osx-finder
                             exec-path-from-shell ;; fix path in Emacs by reading from .zshenv
-                            flycheck-clj-kondo
+                            ;; flycheck-clj-kondo
                             flycheck-rust
                             rust-mode
                             lsp-mode ;; lsp-ui lsp-treemacs
@@ -61,7 +61,7 @@
 (nvm-use "20")
 
 ;; (require 'flycheck-joker)
-(require 'flycheck-clj-kondo)
+;; (require 'flycheck-clj-kondo)
 (require 'flycheck-rust)
 ;; (require 'anakondo)
 
@@ -563,3 +563,5 @@ Includes Homebrew GCC paths and CommandLineTools SDK libraries."
 ;; Set up library paths for native compilation on macOS.
 (when (eq system-type 'darwin)
   (setup-macos-native-comp-library-paths))
+
+(global-unset-key (kbd "C-z"))

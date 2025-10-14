@@ -565,3 +565,10 @@ Includes Homebrew GCC paths and CommandLineTools SDK libraries."
   (setup-macos-native-comp-library-paths))
 
 (global-unset-key (kbd "C-z"))
+
+(defun split-string-at-point ()
+  "Split the string at point into two quoted strings, keeping syntax correct."
+  (interactive)
+  (when (nth 3 (syntax-ppss))  ; are we inside a string?
+    (insert "\"\"")
+    (backward-char 1)))

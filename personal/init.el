@@ -572,3 +572,7 @@ Includes Homebrew GCC paths and CommandLineTools SDK libraries."
   (when (nth 3 (syntax-ppss))  ; are we inside a string?
     (insert "\"\"")
     (backward-char 1)))
+
+;;(add-to-list 'custom-theme-load-path "~/.emacs.d/personal/themes/")
+
+;; (load-theme 'alabaster)

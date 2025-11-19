@@ -380,10 +380,14 @@
 
 ;; (setq garbage-collection-messages t)
 ;; see https://emacs-lsp.github.io/lsp-mode/page/performance/
+
+(setq lsp-headerline-breadcrumb-enable-diagnostics nil)
 (setq gc-cons-threshold (* 100 1024 1024)
       read-process-output-max (* 1024 1024)
       treemacs-space-between-root-nodes nil
       lsp-headerline-breadcrumb-enable nil
+      ;; if the abvoe is set to t, you can still do this for less noise:
+      ;; lsp-headerline-breadcrumb-enable-diagnostics nil
       ;; company-idle-delay 2
       lsp-idle-delay 0.05
       company-minimum-prefix-length 2
@@ -407,6 +411,8 @@
 ;;       ;; lsp-signature-auto-activate nil
 ;;       lsp-ui-peek-fontify 'always
 ;;       lsp-ui-sideline-show-code-actions nil)
+
+(add-hook 'lsp-after-apply-edits-hook (lambda (&rest _) (save-buffer)))
 
 (defun find-refs ()
   (interactive)

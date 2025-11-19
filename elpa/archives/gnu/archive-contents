@@ -791,7 +791,7 @@
 	    (:maintainer "Daniel Mendler" . "mail@daniel-mendler.de")
 	    (:commit . "da62326326b9b121edb46b0f31adb2569e4e896a"))])
  (consult-denote .
-		 [(0 4 0)
+		 [(0 4 1)
 		  ((emacs
 		    (28 1))
 		   (denote
@@ -803,7 +803,7 @@
 		   (:maintainer "Protesilaos Stavrou" . "info@protesilaos.com")
 		   (:authors
 		    ("Protesilaos Stavrou" . "info@protesilaos.com"))
-		   (:commit . "c3a8dccdcf375223036188ab7cacc0c6e421406d"))])
+		   (:commit . "f06fd19ccac60d798b0e41609aa522f3808acde5"))])
  (consult-hoogle .
 		 [(0 5 0)
 		  ((emacs
@@ -1053,7 +1053,7 @@
 	    ("Protesilaos Stavrou" . "info@protesilaos.com"))
 	   (:commit . "13a4de04c8d04be697c891c34765526d7e6c5f25"))])
  (denote-journal .
-		 [(0 2 0)
+		 [(0 2 1)
 		  ((emacs
 		    (28 1))
 		   (denote
@@ -1063,7 +1063,7 @@
 		   (:maintainer "Protesilaos Stavrou" . "info@protesilaos.com")
 		   (:authors
 		    ("Protesilaos Stavrou" . "info@protesilaos.com"))
-		   (:commit . "dbc8acf85bd66cd551422acae3ba8bca15d29029"))])
+		   (:commit . "cfb9cf7cc471c1a8fdce2f0ba73159753842ece3"))])
  (denote-markdown .
 		  [(0 2 0)
 		   ((emacs
@@ -1468,16 +1468,18 @@
 	 ("Eduardo Ochs" . "eduardoochs@gmail.com"))
 	(:commit . "30d2b10f85b0faef4171a7a25c7d4b5a67e5ded5"))])
  (ef-themes .
-	    [(1 11 0)
+	    [(2 0 0)
 	     ((emacs
-	       (28 1)))
+	       (28 1))
+	      (modus-themes
+	       (5 0 0)))
 	     "Colorful and legible themes" tar
 	     ((:url . "https://github.com/protesilaos/ef-themes")
 	      (:keywords "faces" "theme" "accessibility")
 	      (:maintainer "Protesilaos Stavrou" . "info@protesilaos.com")
 	      (:authors
 	       ("Protesilaos Stavrou" . "info@protesilaos.com"))
-	      (:commit . "4253a4b92a8264a1bca0db43301cb8bf7538b7e3"))])
+	      (:commit . "8ec9692b4910b28d3f44654660fc56b6f7d74251"))])
  (eglot .
 	[(1 19)
 	 ((emacs
@@ -2901,7 +2903,7 @@
 	       ("Ian Martins" . "ianxm@jhu.edu"))
 	      (:commit . "da128406fca3eeb66358d479082cd78f2fdeabb4"))])
  (matlab-mode .
-	      [(7 1 2)
+	      [(7 2 1)
 	       ((emacs
 		 (27 2)))
 	       "Major mode for MATLAB(R) dot-m files" tar
@@ -2914,7 +2916,7 @@
 		(:authors
 		 ("Matt Wette" . "mwette@alumni.caltech.edu")
 		 ("Eric M. Ludlam" . "eludlam@mathworks.com"))
-		(:commit . "33673b5b7caf56f064108af5a39b9fadba02ac31"))])
+		(:commit . "f20fe6a5bc35221f612a93099c9375e002b1f712"))])
  (mct .
       [(1 1 0)
        ((emacs
@@ -2987,7 +2989,7 @@
 		    (:url . "https://elpa.gnu.org/packages/minibuffer-line.html")
 		    (:commit . "852874725fd06329109b2d431d8af5502b54036c"))])
  (minimail .
-	   [(0 1 1)
+	   [(0 2)
 	    ((emacs
 	      (30 1)))
 	    "Simple, non-blocking IMAP email client" tar
@@ -2996,7 +2998,7 @@
 	     (:maintainer "Augusto Stoffel" . "arstoffel@gmail.com")
 	     (:authors
 	      ("Augusto Stoffel" . "arstoffel@gmail.com"))
-	     (:commit . "a91cf161f67f1a768d53b7ed16146ad915c9f9aa"))])
+	     (:commit . "fb2012c9390bfafc8664c58924480d3f0048938c"))])
  (minimap .
 	  [(1 4)
 	   nil "Sidebar showing a \"mini-map\" of a buffer" tar
@@ -3033,16 +3035,16 @@
 	      ("Michael Abraham Shulman" . "viritrilbia@gmail.com"))
 	     (:commit . "b1f5c7dbdc405e6e10d9ddd99a43a6b2ad61b176"))])
  (modus-themes .
-	       [(4 8 1)
+	       [(5 1 0)
 		((emacs
-		  (27 1)))
+		  (28 1)))
 		"Elegant, highly legible and customizable themes" tar
 		((:url . "https://github.com/protesilaos/modus-themes")
 		 (:keywords "faces" "theme" "accessibility")
 		 (:maintainer "Protesilaos Stavrou" . "info@protesilaos.com")
 		 (:authors
 		  ("Protesilaos Stavrou" . "info@protesilaos.com"))
-		 (:commit . "2f19a515110f7fcc407fcc32b9cdfdb26a853eb5"))])
+		 (:commit . "4fd8cdfc552e7e1e6a96625a752ab612706b15e3"))])
  (mpdired .
 	  [(3)
 	   ((emacs
@@ -3300,7 +3302,7 @@
 	       ("Omar Antolín Camarena" . "omar@matem.unam.mx"))
 	      (:commit . "31812d9252c6cfa7eae8fa04cd40c8b2081e9936"))])
  (org .
-      [(9 7 35)
+      [(9 7 36)
        ((emacs
 	 (26 1)))
        "Outline-based notes management and organizer" tar
@@ -3309,7 +3311,7 @@
 	(:maintainer "Ihor Radchenko" . "yantar92@posteo.net")
 	(:authors
 	 ("Carsten Dominik" . "carsten.dominik@gmail.com"))
-	(:commit . "7fbe36ed251a285504af95be2ac53972894ec050"))])
+	(:commit . "fa407f8376b7ade1715448413475dc3071c5d4ff"))])
  (org-contacts .
 	       [(1 1)
 		((emacs
@@ -4446,16 +4448,18 @@
 		("Christian Johansson" . "christian@cvj.se"))
 	       (:commit . "95fb076c9b657c5f1bfad3ee5bf1f8691c50d428"))])
  (standard-themes .
-		  [(2 2 0)
+		  [(3 0 0)
 		   ((emacs
-		     (28 1)))
+		     (28 1))
+		    (modus-themes
+		     (5 0 0)))
 		   "Like the default theme but more consistent" tar
 		   ((:url . "https://github.com/protesilaos/standard-themes")
 		    (:keywords "faces" "theme" "accessibility")
 		    (:maintainer "Protesilaos Stavrou" . "info@protesilaos.com")
 		    (:authors
 		     ("Protesilaos Stavrou" . "info@protesilaos.com"))
-		    (:commit . "4b97416543a20f9d16515ff54e6481c852911843"))])
+		    (:commit . "d62c356289178062dec9e944cfafb790a77fe587"))])
  (stream .
 	 [(2 4 0)
 	  ((emacs
@@ -4656,16 +4660,16 @@
 	     ("Milan Glacier" . "dev@milanglacier.com"))
 	    (:commit . "7d265907a960f7e0fab84a107185228860351f54"))])
  (test-simple .
-	      [(1 3 0)
+	      [(1 3 1)
 	       ((cl-lib
 		 (0)))
 	       "Simple Unit Test Framework for Emacs Lisp" tar
-	       ((:url . "http://github.com/rocky/emacs-test-simple")
+	       ((:url . "https://github.com/rocky/emacs-test-simple")
 		(:keywords "unit-test")
 		(:maintainer "Rocky Bernstein" . "rocky@gnu.org")
 		(:authors
 		 ("Rocky Bernstein" . "rocky@gnu.org"))
-		(:commit . "b3b69f52207d3a8111421ad7ab9ed82abbe85316"))])
+		(:commit . "da8ddb6fecb820c8e0809ac0892374e755e4efec"))])
  (tex-item .
 	   [(0 1)
 	    ((emacs
@@ -4780,7 +4784,7 @@
 		  (:url . "https://elpa.gnu.org/packages/track-changes.html")
 		  (:commit . "ffb7d656a2c89f86ccd2de51379de9612c7a4aa3"))])
  (tramp .
-	[(2 8 0 3)
+	[(2 8 0 4)
 	 ((emacs
 	   (28 1)))
 	 "Transparent Remote Access, Multiple Protocol" tar
@@ -4790,7 +4794,7 @@
 	  (:authors
 	   ("Kai Großjohann" . "kai.grossjohann@gmx.net")
 	   ("Michael Albinus" . "michael.albinus@gmx.de"))
-	  (:commit . "4f7278970eaecf096bb0a984191e71e7a49fa58e"))])
+	  (:commit . "382d8b1ed71eb3e4684d6db3aa69c3023e71ced5"))])
  (tramp-nspawn .
 	       [(1 0 1)
 		((emacs
@@ -5111,7 +5115,7 @@
 	   ("Andrew Hyatt" . "ahyatt@gmail.com"))
 	  (:commit . "a0240be7a917dca47b95e401382affd1c11abea1"))])
  (verilog-mode .
-	       [(2025 1 1 100165202)
+	       [(2025 11 8 248496848)
 		nil "major mode for editing verilog source in Emacs" tar
 		((:url . "https://www.veripool.org")
 		 (:keywords "languages")
@@ -5121,7 +5125,7 @@
 		 (:authors
 		  ("Michael McNamara" . "mac@verilog.com")
 		  ("Wilson Snyder" . "wsnyder@wsnyder.org"))
-		 (:commit . "78bc5949db489b143f7424540d6cc56fc529c9ea"))])
+		 (:commit . "266335374e29cfd304838b2109af93ab22f6009f"))])
  (vertico .
 	  [(2 5)
 	   ((emacs
@@ -5427,7 +5431,7 @@
 		("Philip Kaludercic" . "philipk@posteo.net"))
 	       (:commit . "2bb88d0dc526177c3c6612d6585cee6b2c57803a"))])
  (yaml .
-       [(1 2 0)
+       [(1 2 1)
 	((emacs
 	  (25 1)))
 	"YAML parser for Elisp" tar
@@ -5436,7 +5440,7 @@
 	 (:maintainer "Zachary Romero" . "zkry@posteo.org")
 	 (:authors
 	  ("Zachary Romero" . "zkry@posteo.org"))
-	 (:commit . "09e46d563f1f3ff948852e08360c7d3c76e2acba"))])
+	 (:commit . "3fbeaee97dce3c76a18b02a28c58777cbcdadf2f"))])
  (yasnippet .
 	    [(0 14 3)
 	     ((cl-lib

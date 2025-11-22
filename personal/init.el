@@ -570,7 +570,11 @@ Includes Homebrew GCC paths and CommandLineTools SDK libraries."
 (when (eq system-type 'darwin)
   (setup-macos-native-comp-library-paths))
 
-(global-unset-key (kbd "C-z"))
+(defun tt-dont-suspend-emacs ()
+  (interactive)
+  (message "Not suspending emacs"))
+(global-set-key (kbd "C-z") 'tt-dont-suspend-emacs)
+(global-set-key (kbd "C-x C-z") 'tt-dont-suspend-emacs)
 
 (defun split-string-at-point ()
   "Split the string at point into two quoted strings, keeping syntax correct."

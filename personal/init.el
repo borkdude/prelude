@@ -586,3 +586,12 @@ Includes Homebrew GCC paths and CommandLineTools SDK libraries."
 ;;(add-to-list 'custom-theme-load-path "~/.emacs.d/personal/themes/")
 
 ;; (load-theme 'alabaster)
+
+(defun parmezan ()
+  "Run parmezan on the current buffer."
+  (interactive)
+  (when (buffer-file-name)
+    (save-buffer)
+    (shell-command (format "parmezan --file %s --write"
+                           (shell-quote-argument (buffer-file-name))))
+    (revert-buffer t t t)))

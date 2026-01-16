@@ -42,3 +42,4 @@ workspace
 .dap-breakpoints
 elpa/vterm*
 projects
+eca

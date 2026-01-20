@@ -56,7 +56,8 @@
                             markdown-toc
                             ;; flycheck-yamllint
                             nvm
-                            posframe))
+                            posframe
+                            eca))
 
 (nvm-use "20")
 
@@ -595,3 +596,6 @@ Includes Homebrew GCC paths and CommandLineTools SDK libraries."
     (shell-command (format "parmezan --file %s --write"
                            (shell-quote-argument (buffer-file-name))))
     (revert-buffer t t t)))
+
+(setq eca-custom-command '("~/.emacs.d/eca/eca"))
+;; run eca-install-server to get newest

@@ -597,5 +597,5 @@ Includes Homebrew GCC paths and CommandLineTools SDK libraries."
                            (shell-quote-argument (buffer-file-name))))
     (revert-buffer t t t)))
 
-(setq eca-custom-command '("~/.emacs.d/eca/eca"))
+(setq eca-custom-command (list (expand-file-name "~/.emacs.d/eca/eca") "server"))
 ;; run eca-install-server to get newest

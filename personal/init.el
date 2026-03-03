@@ -71,7 +71,6 @@
 ;; use tree-sitter modes instead of legacy modes
 (add-to-list 'auto-mode-alist '("\\.m?js\\'" . js-ts-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js-ts-mode))
-(add-to-list 'major-mode-remap-alist '(html-mode . html-ts-mode))
 
 ;; emacs server
 (require 'server)

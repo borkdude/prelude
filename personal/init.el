@@ -57,7 +57,8 @@
                             ;; flycheck-yamllint
                             nvm
                             posframe
-                            eca))
+                            eca
+                            clojure-ts-mode))
 
 (nvm-use "20")
 
@@ -372,6 +373,15 @@
 (add-hook 'clojurescript-mode-hook 'lsp)
 (add-hook 'clojurec-mode-hook 'lsp)
 
+;; clojure-ts-mode: use instead of clojure-mode
+(add-to-list 'major-mode-remap-alist '(clojure-mode . clojure-ts-mode))
+(add-to-list 'major-mode-remap-alist '(clojurescript-mode . clojure-ts-clojurescript-mode))
+(add-to-list 'major-mode-remap-alist '(clojurec-mode . clojure-ts-clojurec-mode))
+
+;; clojure-ts-mode: enable smartparens + LSP (same as clojure-mode)
+(add-hook 'clojure-ts-mode-hook (lambda () (run-hooks 'prelude-lisp-coding-hook)))
+(add-hook 'clojure-ts-mode-hook 'lsp)
+
 
 ;; (progn
 ;;   (setq gc-cons-threshold (* 511 1024 1024))
@@ -431,7 +441,7 @@
       (cider-find-var))
     ))
 
-(require 'clojure-mode)
+;; (require 'clojure-mode)
 (require 'cider)
 
 (define-key clojure-mode-map (kbd "M-.") #'find-definition)
@@ -587,6 +597,7 @@ Includes Homebrew GCC paths and CommandLineTools SDK libraries."
 ;;(add-to-list 'custom-theme-load-path "~/.emacs.d/personal/themes/")
 
 ;; (load-theme 'alabaster)
+
 
 (defun parmezan ()
   "Run parmezan on the current buffer."

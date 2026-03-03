@@ -43,3 +43,4 @@ workspace
 elpa/vterm*
 projects
 eca
+tree-sitter

@@ -62,8 +62,9 @@
 ;; Do not warn about arrow keys
 (setq prelude-guru nil)
 
-;; js2mode
-(setq-default js2-basic-offset 2)
+;; use tree-sitter js mode instead of js2-mode
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js-ts-mode))
+(add-to-list 'interpreter-mode-alist '("node" . js-ts-mode))
 
 ;; emacs server
 (require 'server)
@@ -275,18 +276,15 @@
 
 (defun ed/setup-js-and-typescript ()
   (interactive)
-  (setq js2-mode-show-parse-errors nil)
-  (setq js2-mode-show-strict-warnings nil)
   (lsp-mode)
   (flycheck-mode +1)
   (eldoc-mode +1)
   (setq js-indent-level 2)
   (setq typescript-indent-level 2)
-  (define-key js-mode-map (kbd "M-.") 'lsp-find-definition)
   (subword-mode +1)
   (yas-minor-mode-on))
 
-(add-hook 'js-mode-hook #'ed/setup-js-and-typescript)
+(add-hook 'js-ts-mode-hook #'ed/setup-js-and-typescript)
 
 ;; https://emacs.stackexchange.com/a/13096/22096
 (defun my-reload-dir-locals-for-current-buffer ()

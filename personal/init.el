@@ -62,9 +62,16 @@
 ;; Do not warn about arrow keys
 (setq prelude-guru nil)
 
-;; use tree-sitter js mode instead of js2-mode
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js-ts-mode))
+;; tree-sitter grammar sources
+(setq treesit-language-source-alist
+      '((javascript "https://github.com/tree-sitter/tree-sitter-javascript")
+        (html "https://github.com/tree-sitter/tree-sitter-html")
+        (css "https://github.com/tree-sitter/tree-sitter-css")))
+
+;; use tree-sitter modes instead of legacy modes
+(add-to-list 'auto-mode-alist '("\\.m?js\\'" . js-ts-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js-ts-mode))
+(add-to-list 'major-mode-remap-alist '(html-mode . html-ts-mode))
 
 ;; emacs server
 (require 'server)
@@ -274,17 +281,13 @@
 ;;   (switch-to-buffer buf))
 ;; (other-frame 1)
 
-(defun ed/setup-js-and-typescript ()
-  (interactive)
-  (lsp-mode)
-  (flycheck-mode +1)
-  (eldoc-mode +1)
-  (setq js-indent-level 2)
-  (setq typescript-indent-level 2)
-  (subword-mode +1)
-  (yas-minor-mode-on))
-
-(add-hook 'js-ts-mode-hook #'ed/setup-js-and-typescript)
+(add-hook 'js-ts-mode-hook #'lsp)
+(add-hook 'js-ts-mode-hook (lambda ()
+                             (flycheck-mode +1)
+                             (eldoc-mode +1)
+                             (setq js-indent-level 2)
+                             (setq typescript-indent-level 2)
+                             (subword-mode +1)))
 
 ;; https://emacs.stackexchange.com/a/13096/22096
 (defun my-reload-dir-locals-for-current-buffer ()

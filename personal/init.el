@@ -207,10 +207,6 @@
 ;; clojure-lsp
 ;; see https://emacs-lsp.github.io/lsp-mode/tutorials/clojure-guide/
 
-(add-hook 'clojure-mode-hook 'lsp)
-(add-hook 'clojurescript-mode-hook 'lsp)
-(add-hook 'clojurec-mode-hook 'lsp)
-
 ;; clojure-ts-mode: use instead of clojure-mode
 (add-to-list 'major-mode-remap-alist '(clojure-mode . clojure-ts-mode))
 (add-to-list 'major-mode-remap-alist '(clojurescript-mode . clojure-ts-clojurescript-mode))

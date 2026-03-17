@@ -45,8 +45,8 @@
   (interactive)
   (delete-trailing-whitespace)
   (if (and (lsp-workspaces)
-           (lsp--capability "documentFormattingProvider")
-           )
+           (lsp--capability "documentFormattingProvider"))
+      (lsp-format-buffer)
     (indent-region (point-min) (point-max) nil))
   (untabify (point-min) (point-max)))
 

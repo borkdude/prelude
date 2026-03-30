@@ -414,12 +414,6 @@
   :config
   (ido-vertical-mode 1))
 
-;; neotree — file tree sidebar (like NERDTree/VSCode explorer)
-(use-package neotree
-  :config
-  (setq neo-smart-open t)
-  (setq projectile-switch-project-action 'neotree-projectile-action))
-
 ;; git-gutter — shows git diff markers in the gutter (terminal only, diff-hl handles GUI)
 (use-package git-gutter
   :if (not window-system)

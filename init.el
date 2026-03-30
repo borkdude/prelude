@@ -341,13 +341,10 @@
          ([(meta shift up)] . move-text-up)
          ([(meta shift down)] . move-text-down)))
 
-;; undo-tree — visualize undo history as a tree (C-x u), never lose an undo branch
-(use-package undo-tree
-  :diminish undo-tree-mode
-  :config
-  (setq undo-tree-history-directory-alist `((".*" . ,temporary-file-directory))
-        undo-tree-auto-save-history t)
-  (global-undo-tree-mode))
+;; vundo — visual undo tree browser (lighter than undo-tree, no corruption issues)
+;; Press C-x u to open the tree, navigate with f/b/n/p, press q to quit
+(use-package vundo
+  :bind ("C-x u" . vundo))
 
 ;; diff-hl — highlights uncommitted changes in the gutter (git diff in the fringe)
 (use-package diff-hl

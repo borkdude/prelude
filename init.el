@@ -291,16 +291,14 @@
 (use-package flycheck-pos-tip
   :after flycheck)
 
-;; company — auto-completion popup as you type
-(use-package company
-  :diminish company-mode
+;; corfu — lightweight auto-completion popup, uses Emacs's built-in completion-at-point
+(use-package corfu
   :config
-  (setq company-idle-delay 0.5
-        company-show-quick-access t
-        company-minimum-prefix-length 2
-        company-tooltip-align-annotations t
-        company-tooltip-flip-when-above t)
-  (global-company-mode))
+  (setq corfu-auto t           ;; show popup automatically
+        corfu-auto-delay 0.5   ;; after 0.5s idle
+        corfu-auto-prefix 2    ;; after typing 2 characters
+        corfu-cycle t)
+  (global-corfu-mode))
 
 ;; which-key — shows available keybindings when you pause mid-keystroke
 (use-package which-key

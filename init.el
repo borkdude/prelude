@@ -279,13 +279,39 @@
 ;; flymake — built-in on-the-fly syntax checking (LSP feeds diagnostics into it)
 (add-hook 'prog-mode-hook #'flymake-mode)
 
-;; flymake-popon — show diagnostics inline at cursor (like flycheck-inline)
-(use-package flymake-popon
-  :after flymake
-  :config
-  (setq flymake-popon-posframe-extra-arguments
-        '(:poshandler posframe-poshandler-point-bottom-left-corner))
-  :hook (flymake-mode . flymake-popon-mode))
+;; Show flymake error below the current line only, as inline overlay
+(defvar-local my/flymake-inline-ov nil)
+
+(defface my/flymake-inline-face
+  '((t :foreground "#ffa500"))
+  "Face for inline flymake diagnostics.")
+
+(defun my/flymake-show-inline ()
+  "Show flymake diagnostic at end of current line as an overlay."
+  (when my/flymake-inline-ov
+    (delete-overlay my/flymake-inline-ov)
+    (setq my/flymake-inline-ov nil))
+  (when-let* ((diags (flymake-diagnostics (line-beginning-position) (line-end-position))))
+    (let* ((text (mapconcat #'flymake-diagnostic-text diags "; "))
+           (ov (make-overlay (line-end-position) (line-end-position))))
+      (overlay-put ov 'after-string
+                   (propertize (concat "  " text) 'face 'my/flymake-inline-face))
+      (overlay-put ov 'my-flymake-inline t)
+      (setq my/flymake-inline-ov ov))))
+
+(defun my/flymake-clear-inline ()
+  "Remove inline diagnostic overlay."
+  (when my/flymake-inline-ov
+    (delete-overlay my/flymake-inline-ov)
+    (setq my/flymake-inline-ov nil)))
+
+(add-hook 'flymake-mode-hook
+          (lambda ()
+            (add-hook 'post-command-hook #'my/flymake-show-inline nil t)))
+
+(add-hook 'flymake-mode-hook
+          (lambda ()
+            (add-hook 'before-revert-hook #'my/flymake-clear-inline nil t)))
 
 ;; corfu — lightweight auto-completion popup, uses Emacs's built-in completion-at-point
 (use-package corfu

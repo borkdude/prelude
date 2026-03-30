@@ -315,7 +315,6 @@
   :bind (("C-c o" . crux-open-with)
          ("C-a" . crux-move-beginning-of-line)
          ("C-c n" . crux-cleanup-buffer-or-region)
-         ("C-c f" . crux-recentf-find-file)
          ("C-c e" . crux-eval-and-replace)
          ("C-c s" . crux-swap-windows)
          ("C-c D" . crux-delete-file-and-buffer)
@@ -387,32 +386,45 @@
   :hook (prog-mode . hl-todo-mode))
 
 
-;; flx-ido — fuzzy matching for ido (typo-tolerant file/buffer finding)
-(use-package flx-ido)
-
-;; ido-completing-read+ — makes ido work for all completion prompts, not just files/buffers
-(use-package ido-completing-read+)
-
-;; smex — M-x enhancement that sorts commands by recent usage
-(use-package smex
-  :bind (("C-x C-m" . smex)
-         ("M-X" . smex-major-mode-commands)))
-
-(use-package ido
-  :ensure nil
+;; vertico — vertical completion UI, builds on Emacs's native completing-read
+(use-package vertico
   :config
-  (setq ido-enable-flex-matching t
-        ido-create-new-buffer 'always
-        ido-save-directory-list-file (expand-file-name "ido.last" savefile-dir))
-  (ido-mode +1)
-  (ido-everywhere +1)
-  (flx-ido-mode +1)
-  (ido-ubiquitous-mode +1))
+  (vertico-mode +1)
+  (setq vertico-cycle t)
+  (set-face-attribute 'vertico-current nil
+                      :underline nil
+                      :background "#444"))
 
-;; ido-vertical-mode — displays ido candidates vertically instead of horizontally
-(use-package ido-vertical-mode
+;; prescient — sorts candidates by frequency and recency (recently used first)
+(use-package vertico-prescient
+  :after vertico
   :config
-  (ido-vertical-mode 1))
+  (setq vertico-prescient-enable-filtering nil) ;; use orderless for filtering
+  (vertico-prescient-mode +1)
+  (prescient-persist-mode +1))
+
+;; orderless — flexible matching (type words in any order, e.g. "clj def" finds clojure-find-definition)
+(use-package orderless
+  :config
+  (setq completion-styles '(orderless basic)
+        completion-category-defaults nil
+        completion-category-overrides '((file (styles partial-completion))))
+  (setq orderless-matching-styles '(orderless-literal orderless-regexp orderless-initialism)))
+
+;; marginalia — shows descriptions next to candidates (docstrings, file info, etc.)
+(use-package marginalia
+  :config
+  (marginalia-mode +1))
+
+;; consult — enhanced search, buffer switch, recent files, grep, and more
+(use-package consult
+  :bind (("C-c f" . consult-recent-file)
+         ("C-x b" . consult-buffer)
+         ("M-g g" . consult-goto-line)
+         ("M-g M-g" . consult-goto-line)
+         ("M-s r" . consult-ripgrep)
+         ("M-s l" . consult-line)
+         ("C-x C-m" . execute-extended-command)))
 
 ;; git-gutter — shows git diff markers in the gutter (terminal only, diff-hl handles GUI)
 (use-package git-gutter

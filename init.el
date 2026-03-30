@@ -780,13 +780,6 @@
 (when (string-equal "localhost:10.0" (getenv "DISPLAY"))
   (set-face-attribute 'default nil :height 94))
 
-;;;; --- ECA ---
-
-;; eca — Emacs Claude Agent
-(use-package eca
-  :config
-  (setq eca-custom-command (list (expand-file-name "~/.emacs.d/eca/eca") "server")))
-
 ;;;; --- Prevent ffap from pinging hostnames ---
 
 (setq-default ffap-machine-p-known 'reject)

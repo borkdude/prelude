@@ -276,20 +276,16 @@
 (use-package magit
   :bind (("C-c g" . magit-file-dispatch)))
 
-;; flycheck — on-the-fly syntax checking (linters, compilers)
-(use-package flycheck
-  :diminish flycheck-mode
+;; flymake — built-in on-the-fly syntax checking (LSP feeds diagnostics into it)
+(add-hook 'prog-mode-hook #'flymake-mode)
+
+;; flymake-popon — show diagnostics inline at cursor (like flycheck-inline)
+(use-package flymake-popon
+  :after flymake
   :config
-  (global-flycheck-mode))
-
-;; flycheck-inline — show errors inline below the offending line
-(use-package flycheck-inline
-  :after flycheck
-  :hook (flycheck-mode . flycheck-inline-mode))
-
-;; flycheck-pos-tip — show errors in a tooltip popup
-(use-package flycheck-pos-tip
-  :after flycheck)
+  (setq flymake-popon-posframe-extra-arguments
+        '(:poshandler posframe-poshandler-point-bottom-left-corner))
+  :hook (flymake-mode . flymake-popon-mode))
 
 ;; corfu — lightweight auto-completion popup, uses Emacs's built-in completion-at-point
 (use-package corfu
@@ -540,7 +536,6 @@
 (add-hook 'js-ts-mode-hook #'lsp)
 (add-hook 'js-ts-mode-hook
           (lambda ()
-            (flycheck-mode +1)
             (eldoc-mode +1)
             (setq js-indent-level 2)
             (setq typescript-indent-level 2)
@@ -556,9 +551,6 @@
 (use-package rust-mode
   :hook (rust-mode . lsp))
 
-(use-package flycheck-rust
-  :after rust-mode
-  :hook (flycheck-mode . flycheck-rust-setup))
 
 ;; elisp-slime-nav — M-. to jump to definition, M-, to jump back in Emacs Lisp
 (use-package elisp-slime-nav
@@ -578,7 +570,6 @@
 (add-to-list 'auto-mode-alist '("zshenv\\'" . shell-script-mode))
 (add-to-list 'auto-mode-alist '("zshrc\\'" . shell-script-mode))
 
-(add-hook 'sh-mode-hook 'flycheck-mode)
 
 ;; XML
 (add-to-list 'auto-mode-alist '("\\.pom\\'" . nxml-mode))

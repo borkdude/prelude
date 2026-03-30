@@ -1,0 +1,38 @@
+#+title: ~flymake-popon~ - Flymake diagnostics on cursor hover
+
+This package shows Flymake diagnostics on cursor hover.  This works on
+both graphical and non-graphical displays.
+
+[[./demo-gui.png]]
+~flymake-popon~ on GUI using Posframe.
+
+[[./demo-terminal.png]]
+~flymake-popon~ on terminal using Popon.
+
+* Installation
+
+** Package
+
+Install from NonGNU ELPA.
+
+** Quelpa
+
+#+begin_src emacs-lisp
+(quelpa '(flymake-popon
+          :fetcher git
+          :url "https://codeberg.org/akib/emacs-flymake-popon.git"))
+#+end_src
+
+** Straight.el
+
+#+begin_src emacs-lisp
+(straight-use-package
+ '(flymake-popon
+   :type git
+   :repo "https://codeberg.org/akib/emacs-flymake-popon.git"))
+#+end_src
+
+* Usage
+
+Enable with =M-x flymake-popon-mode=.  All customization options can
+be found by =M-x customize-group RET flymake-popon=.

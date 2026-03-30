@@ -1,0 +1,2 @@
+;; Generated package description from flymake-popon.el  -*- no-byte-compile: t -*-
+(define-package "flymake-popon" "0.5.1" "Flymake diagnostics on cursor hover" '((emacs "26.1") (flymake "1.2.2") (popon "0.1") (posframe "1.3.2")) :commit "99ea813346f3edef7220d8f4faeed2ec69af6060" :authors '(("Akib Azmain Turja" . "akib@disroot.org")) :maintainer '("Akib Azmain Turja" . "akib@disroot.org") :keywords '("convenience") :url "https://codeberg.org/akib/emacs-flymake-popon")

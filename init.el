@@ -353,12 +353,6 @@
   (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
   (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
 
-;; volatile-highlights — briefly highlights yanked/undone text so you see what changed
-(use-package volatile-highlights
-  :diminish volatile-highlights-mode
-  :config
-  (volatile-highlights-mode t))
-
 ;; super-save — auto-saves buffers when you switch windows/buffers
 (use-package super-save
   :diminish super-save-mode
@@ -451,7 +445,8 @@
         lsp-clojure-custom-server-command '("/Users/borkdude/bin/clojure-lsp-dev")
         lsp-enable-indentation nil
         lsp-completion-provider :capf
-        lsp-enable-on-type-formatting nil)
+        lsp-enable-on-type-formatting nil
+        lsp-enable-snippet nil)
   (add-hook 'lsp-after-apply-edits-hook (lambda (&rest _) (save-buffer))))
 
 ;;;; --- Programming base hook ---

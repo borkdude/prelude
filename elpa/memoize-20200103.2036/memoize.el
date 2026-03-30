@@ -4,7 +4,8 @@
 
 ;; Author: Christopher Wellons <mosquitopsu@gmail.com>
 ;; URL: https://github.com/skeeto/emacs-memoize
-;; Version: 1.1
+;; Package-Version: 20200103.2036
+;; Package-Revision: 51b075935ca7
 
 ;;; Commentary:
 

@@ -5,7 +5,8 @@
 ;; Filename: ido-completing-read+.el
 ;; Author: Ryan C. Thompson <rct@thompsonclan.org>
 ;; Created: Sat Apr  4 13:41:20 2015 (-0700)
-;; Version: 4.14
+;; Package-Version: 20240130.30
+;; Package-Revision: 1609049c0a9b
 ;; Package-Requires: ((emacs "24.4") (seq "0.5") (memoize "1.1"))
 ;; URL: https://github.com/DarwinAwardWinner/ido-completing-read-plus
 ;; Keywords: ido, completion, convenience

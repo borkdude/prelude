@@ -287,17 +287,18 @@
   "Face for inline flymake diagnostics.")
 
 (defun my/flymake-show-inline ()
-  "Show flymake diagnostic at end of current line as an overlay."
+  "Show flymake diagnostic at end of current line, hide when cursor is at end."
   (when my/flymake-inline-ov
     (delete-overlay my/flymake-inline-ov)
     (setq my/flymake-inline-ov nil))
   (when-let* ((diags (flymake-diagnostics (line-beginning-position) (line-end-position))))
-    (let* ((text (mapconcat #'flymake-diagnostic-text diags "; "))
-           (ov (make-overlay (line-end-position) (line-end-position))))
-      (overlay-put ov 'after-string
-                   (propertize (concat "  " text) 'face 'my/flymake-inline-face))
-      (overlay-put ov 'my-flymake-inline t)
-      (setq my/flymake-inline-ov ov))))
+    (unless (eql (point) (line-end-position))
+      (let* ((text (mapconcat #'flymake-diagnostic-text diags "; "))
+             (ov (make-overlay (line-end-position) (line-end-position))))
+        (overlay-put ov 'after-string
+                     (propertize (concat "  " text) 'face 'my/flymake-inline-face))
+        (overlay-put ov 'my-flymake-inline t)
+        (setq my/flymake-inline-ov ov)))))
 
 (defun my/flymake-clear-inline ()
   "Remove inline diagnostic overlay."

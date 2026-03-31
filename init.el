@@ -407,6 +407,7 @@
                       :underline nil
                       :background "#444")
   ;; Backspace deletes whole directory component in file paths (like ido)
+  (define-key vertico-map (kbd "DEL") #'vertico-directory-delete-char)
   (define-key vertico-map (kbd "M-DEL") #'vertico-directory-delete-word)
   (add-hook 'rfn-eshadow-update-overlay-hook #'vertico-directory-tidy)
   ;; Left/right to cycle candidates (like ido)

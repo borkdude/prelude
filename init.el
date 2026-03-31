@@ -407,7 +407,10 @@
                       :background "#444")
   ;; Backspace deletes whole directory component in file paths (like ido)
   (define-key vertico-map (kbd "M-DEL") #'vertico-directory-delete-word)
-  (add-hook 'rfn-eshadow-update-overlay-hook #'vertico-directory-tidy))
+  (add-hook 'rfn-eshadow-update-overlay-hook #'vertico-directory-tidy)
+  ;; Left/right to cycle candidates (like ido)
+  (define-key vertico-map (kbd "<left>") #'vertico-previous)
+  (define-key vertico-map (kbd "<right>") #'vertico-next))
 
 ;; prescient — sorts candidates by frequency and recency (recently used first)
 (use-package vertico-prescient

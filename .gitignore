@@ -1,6 +1,7 @@
 *~
 *.elc
 auto-save-list
+var/
 recentf
 savehist
 saveplace

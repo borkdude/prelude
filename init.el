@@ -474,6 +474,7 @@
   (setq lsp-headerline-breadcrumb-enable nil
         lsp-idle-delay 0.05
         lsp-lens-enable t
+        lsp-lens-place-position 'end-of-line
         lsp-enable-file-watchers nil
         lsp-file-watch-threshold 10000
         lsp-clojure-custom-server-command '("/Users/borkdude/bin/clojure-lsp-dev")

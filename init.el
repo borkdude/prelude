@@ -408,6 +408,8 @@
   (set-face-attribute 'vertico-current nil
                       :underline nil
                       :background "#444")
+  ;; RET enters directory instead of opening dired (like ido)
+  (define-key vertico-map (kbd "RET") #'vertico-directory-enter)
   ;; Backspace deletes whole directory component in file paths (like ido)
   (define-key vertico-map (kbd "DEL") #'vertico-directory-delete-char)
   (define-key vertico-map (kbd "M-DEL") #'vertico-directory-delete-word)

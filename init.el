@@ -266,7 +266,8 @@
 (use-package projectile
   :diminish projectile-mode
   :init
-  (setq projectile-cache-file (expand-file-name "projectile.cache" savefile-dir))
+  (setq projectile-cache-file (expand-file-name "projectile.cache" savefile-dir)
+        projectile-completion-system 'ido)
   :config
   (projectile-mode t)
   :bind-keymap
@@ -400,54 +401,41 @@
   :hook (prog-mode . hl-todo-mode))
 
 
-;; vertico — vertical completion UI, builds on Emacs's native completing-read
-(use-package vertico
-  :config
-  (vertico-mode +1)
-  (setq vertico-cycle t)
-  (set-face-attribute 'vertico-current nil
-                      :underline nil
-                      :background "#444")
-  ;; RET enters directory instead of opening dired (like ido)
-  (define-key vertico-map (kbd "RET") #'vertico-directory-enter)
-  ;; Backspace deletes whole directory component in file paths (like ido)
-  (define-key vertico-map (kbd "DEL") #'vertico-directory-delete-char)
-  (define-key vertico-map (kbd "M-DEL") #'vertico-directory-delete-word)
-  (add-hook 'rfn-eshadow-update-overlay-hook #'vertico-directory-tidy)
-  ;; Left/right to cycle candidates (like ido)
-  (define-key vertico-map (kbd "<left>") #'vertico-previous)
-  (define-key vertico-map (kbd "<right>") #'vertico-next))
+;; ido — fast file/buffer switching with flex matching
+(use-package flx-ido)
+(use-package ido-completing-read+)
+(use-package ido-vertical-mode)
+(use-package smex)
 
-;; prescient — sorts candidates by frequency and recency (recently used first)
-(use-package vertico-prescient
-  :after vertico
-  :config
-  (setq vertico-prescient-enable-filtering nil) ;; use orderless for filtering
-  (vertico-prescient-mode +1)
-  (prescient-persist-mode +1))
+(require 'ido)
+(require 'ido-completing-read+)
+(require 'flx-ido)
 
-;; orderless — flexible matching (type words in any order, e.g. "clj def" finds clojure-find-definition)
-(use-package orderless
-  :config
-  (setq completion-styles '(orderless basic)
-        completion-category-defaults nil
-        completion-category-overrides '((file (styles partial-completion))))
-  (setq orderless-matching-styles '(orderless-literal orderless-regexp orderless-initialism)))
+(setq ido-enable-prefix nil
+      ido-enable-flex-matching t
+      ido-create-new-buffer 'always
+      ido-use-filename-at-point 'guess
+      ido-max-prospects 10
+      ido-save-directory-list-file (expand-file-name "ido.hist" savefile-dir)
+      ido-default-file-method 'selected-window
+      ido-auto-merge-work-directories-length -1)
+(ido-mode +1)
+(ido-ubiquitous-mode +1)
 
-;; marginalia — shows descriptions next to candidates (docstrings, file info, etc.)
-(use-package marginalia
-  :config
-  (marginalia-mode +1))
+;; Fuzzy matching
+(flx-ido-mode +1)
+(setq ido-use-faces nil)
 
-;; consult — enhanced search, buffer switch, recent files, grep, and more
-(use-package consult
-  :bind (("C-c f" . consult-recent-file)
-         ("C-x b" . consult-buffer)
-         ("M-g g" . consult-goto-line)
-         ("M-g M-g" . consult-goto-line)
-         ("M-s r" . consult-ripgrep)
-         ("M-s l" . consult-line)
-         ("C-x C-m" . execute-extended-command)))
+;; Vertical candidate list
+(ido-vertical-mode 1)
+
+;; smex — frecency-sorted M-x
+(require 'smex)
+(setq smex-save-file (expand-file-name ".smex-items" savefile-dir))
+(smex-initialize)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+(global-set-key (kbd "C-x C-m") 'smex)
 
 ;; git-gutter — shows git diff markers in the gutter (terminal only, diff-hl handles GUI)
 (use-package git-gutter

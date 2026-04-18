@@ -547,10 +547,19 @@
 (setq treesit-language-source-alist
       '((javascript "https://github.com/tree-sitter/tree-sitter-javascript")
         (html "https://github.com/tree-sitter/tree-sitter-html")
-        (css "https://github.com/tree-sitter/tree-sitter-css")))
+        (css "https://github.com/tree-sitter/tree-sitter-css")
+        (json "https://github.com/tree-sitter/tree-sitter-json")))
+
+;; Auto-install any tree-sitter grammars listed above that aren't present yet
+(dolist (lang (mapcar #'car treesit-language-source-alist))
+  (unless (treesit-language-available-p lang)
+    (treesit-install-language-grammar lang)))
 
 (add-to-list 'auto-mode-alist '("\\.m?js\\'" . js-ts-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js-ts-mode))
+
+;; JSON
+(add-to-list 'auto-mode-alist '("\\.json\\'" . json-ts-mode))
 
 (add-hook 'js-ts-mode-hook #'lsp)
 (add-hook 'js-ts-mode-hook

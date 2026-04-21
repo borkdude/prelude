@@ -510,6 +510,9 @@
   (define-key cider-mode-map (kbd "M-.") #'find-definition)
   (define-key clojurec-mode-map (kbd "M-.") #'find-definition)
   (define-key clojurescript-mode-map (kbd "M-.") #'find-definition)
+  (define-key clojure-ts-mode-map (kbd "M-.") #'find-definition)
+  (define-key clojure-ts-clojurec-mode-map (kbd "M-.") #'find-definition)
+  (define-key clojure-ts-clojurescript-mode-map (kbd "M-.") #'find-definition)
 
   ;; Clerk
   (cider-register-cljs-repl-type 'clerk-browser-repl "(+ 1 2 3)"))
@@ -765,6 +768,8 @@
 ;; Clerk keybinding (set after clojure-mode loads)
 (with-eval-after-load 'clojure-mode
   (define-key clojure-mode-map (kbd "<M-return>") 'clerk-show))
+(with-eval-after-load 'clojure-ts-mode
+  (define-key clojure-ts-mode-map (kbd "<M-return>") 'clerk-show))
 
 ;;;; --- Emacs server ---
 

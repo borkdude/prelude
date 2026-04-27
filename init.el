@@ -248,8 +248,7 @@
         sp-autoskip-closing-pair 'always
         sp-hybrid-kill-entire-symbol nil)
   (sp-use-paredit-bindings)
-  ;; Fix M-s and M-? shadowing built-in bindings
-  (define-key smartparens-mode-map (kbd "M-s") nil)
+  ;; Fix M-? shadowing built-in binding (keep M-s as sp-splice-sexp)
   (define-key smartparens-mode-map (kbd "M-?") nil)
   (show-smartparens-global-mode +1))
 

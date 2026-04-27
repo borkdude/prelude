@@ -279,6 +279,8 @@
 ;; flymake — built-in on-the-fly syntax checking (LSP feeds diagnostics into it)
 (add-hook 'prog-mode-hook #'flymake-mode)
 
+(set-face-attribute 'flymake-warning nil :underline '(:style wave :color "#fff68f"))
+
 ;; Show flymake error below the current line only, as inline overlay
 (defvar-local my/flymake-inline-ov nil)
 

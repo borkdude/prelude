@@ -519,6 +519,15 @@
   ;; Clerk
   (cider-register-cljs-repl-type 'clerk-browser-repl "(+ 1 2 3)"))
 
+;;;; --- cljbang ---
+
+;; Clojure that compiles to Emacs Lisp, from a local clone.  Requiring
+;; the mode pulls in the compiler and the runtime.  It stays out of
+;; CIDER's way: a .clj file only becomes cljbang when it says so, with
+;; -*- mode: clojure; cljbang-whole-buffer: t -*- on its first line.
+(add-to-list 'load-path (expand-file-name "~/dev/cljbang"))
+(require 'cljbang-mode)
+
 (defun find-definition ()
   "Try to find definition of cursor via LSP otherwise fallback to cider."
   (interactive)

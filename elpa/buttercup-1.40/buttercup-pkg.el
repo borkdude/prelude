@@ -1,0 +1,2 @@
+;; Generated package description from buttercup.el  -*- no-byte-compile: t; lexical-binding:t -*-
+(define-package "buttercup" "1.40" "Behavior-Driven Emacs Lisp Testing" '((emacs "24.4")) :commit "57d03004cc730678bcdefb91ad294824975cfea4" :authors '(("Jorgen Schaefer" . "contact@jorgenschaefer.de")) :maintainer '("Ola Nilsson" . "ola.nilsson@gmail.com") :url "https://github.com/jorgenschaefer/emacs-buttercup")

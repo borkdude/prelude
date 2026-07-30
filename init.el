@@ -563,7 +563,8 @@
         (html "https://github.com/tree-sitter/tree-sitter-html")
         (css "https://github.com/tree-sitter/tree-sitter-css")
         (json "https://github.com/tree-sitter/tree-sitter-json")
-        (yaml "https://github.com/ikatyang/tree-sitter-yaml")))
+        (yaml "https://github.com/tree-sitter-grammars/tree-sitter-yaml")
+        (dockerfile "https://github.com/camdencheek/tree-sitter-dockerfile")))
 
 ;; Auto-install any tree-sitter grammars listed above that aren't present yet
 (dolist (lang (mapcar #'car treesit-language-source-alist))
@@ -578,6 +579,15 @@
 
 ;; YAML
 (add-to-list 'auto-mode-alist '("\\.ya?ml\\'" . yaml-ts-mode))
+
+;; Dockerfile
+(add-to-list 'auto-mode-alist
+             '("\\(?:Dockerfile\\(?:\\..*\\)?\\|\\.[Dd]ockerfile\\)\\'" . dockerfile-ts-mode))
+
+;; Caddyfile — Caddy's own config syntax, no tree-sitter mode upstream
+(use-package caddyfile-mode
+  :mode (("Caddyfile\\'" . caddyfile-mode)
+         ("caddy\\.conf\\'" . caddyfile-mode)))
 
 (add-hook 'js-ts-mode-hook #'lsp)
 (add-hook 'js-ts-mode-hook

@@ -838,4 +838,28 @@
 (use-package reveal-in-osx-finder
   :if (eq system-type 'darwin))
 
+(use-package copilot
+  :ensure t
+  :hook (prog-mode . copilot-mode)
+  :custom
+  ;; Modes missing from copilot-indentation-alist fall back to tab-width (8)
+  ;; and print a warning; give the ones I use a real offset and mute the rest.
+  (copilot-indent-offset-warning-disable t)
+  :config
+  (dolist (entry '((clojure-mode 2)
+                   (clojurescript-mode 2)
+                   (clojurec-mode 2)
+                   (clojure-ts-mode clojure-ts-indent-offset)
+                   (sh-mode sh-basic-offset)
+                   (js-mode js-indent-level)
+                   (typescript-ts-mode typescript-ts-mode-indent-offset)))
+    (add-to-list 'copilot-indentation-alist entry))
+  :bind (:map copilot-completion-map
+              ("<tab>" . copilot-accept-completion)
+              ("TAB" . copilot-accept-completion)
+              ("C-<tab>" . copilot-accept-completion-by-word)
+              ("C-TAB" . copilot-accept-completion-by-word)
+              ("C-n" . copilot-next-completion)
+              ("C-p" . copilot-previous-completion)))
+
 ;;; init.el ends here
